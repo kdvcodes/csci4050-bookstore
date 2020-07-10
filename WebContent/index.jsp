@@ -98,7 +98,6 @@
           <a href="product_single.jsp">
             <img src="images/harry1.jpeg" alt="img" width="200" height="300">
           </a>
-          <jsp:include page="/getBookName"></jsp:include>
           <h4>Harry Potter and the Sorcerer's Stone</h4>
           <h6><span class="price">$29</span></h6>
         </div>
