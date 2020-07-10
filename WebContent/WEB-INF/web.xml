@@ -14,14 +14,4 @@
     <servlet-name>getBookName</servlet-name>
     <url-pattern>/getBookName</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>testing</display-name>
-    <servlet-name>testing</servlet-name>
-    <servlet-class>controller.testing</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>testing</servlet-name>
-    <url-pattern>/testing</url-pattern>
-  </servlet-mapping>
 </web-app>
