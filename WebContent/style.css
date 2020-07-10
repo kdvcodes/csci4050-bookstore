@@ -1,0 +1,55 @@
+/* #37392E : Black Olive
+#DDDBF1 : Lavender Web
+#ACF39D : Light Green
+#41337A : Dark Slate Blue
+#AF3E4D : English Red */
+
+html, body {
+    background:#DDDBF1;
+    min-height: 100vh;
+}
+
+
+#admin, #order{
+    margin-top: 20px;
+}
+
+.form-gap {
+    padding-top: 70px;
+}
+
+.jumbotron{
+    background-image: url(images/slide1.jpg);
+    background-size: cover;
+    background-position: center center;
+    color: #37392E ;
+    padding-left: 30px;
+}
+
+.confirmation{
+    align-items: center;
+}
+
+.navbar {
+    background-color: #41337A;
+}
+
+#branding {
+    color: #DDDBF1;
+}
+
+.btn, .btn:hover {
+    color: #DDDBF1;
+    border: none;
+}
+
+nav .navbar-nav li a{
+    color: white !important;
+}
+
+
+
+
+/* .dropdown {
+    color: black;
+} */

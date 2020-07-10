@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="csci4050-bookstore">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="csci4050-bookstore"/>
+        <property name="java-output-path" value="/csci4050-bookstore/build/classes"/>
+    </wb-module>
+</project-modules>
