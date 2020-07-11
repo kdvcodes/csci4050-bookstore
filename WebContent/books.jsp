@@ -45,31 +45,6 @@ To change this template use File | Settings | File Templates.
             <li class="nav-item"><a href="books.jsp" class="nav-link">Shop</a></li>
             <li class="nav-item"><a href="shoppingCart.jsp" class="nav-link">Cart</a></li>
         </ul>
-        <form class="form-inline ml auto">
-	<div class="container">
-    <div class="row">    
-        <div class="col-xs-8 col-xs-offset-2">
-		    <div class="input-group">
-                <div class="input-group-btn search-panel">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                      <span id="search_concept"><span class="glyphicon glyphicon-align-justify"></span> All</span>  <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span>Title</a></li>
-                      <li><a href="#its_equal"> <span class="glyphicon glyphicon-music text-warning"></span>Author</a></li>
-                      <li><a href="#greather_than"> <span class="glyphicon glyphicon-user text-success"></span>Year</a></li>
-                    </ul>
-                </div>
-                <input type="hidden" name="search_param" value="all" id="search_param">         
-                <input type="text" class="form-control" name="x" placeholder="Search term...">
-                <span class="input-group-btn">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </span>
-            </div>
-        </div>
-	</div>
-</div>
-    </form>
 
 
 
