@@ -107,7 +107,7 @@
             <div class="row">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
 
-                    <form class="needs-validation" novalidate="">
+                    <form id="register" class="needs-validation" novalidate="" method="post" action="register">
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">First name<span class="required">*</span></label>
@@ -141,7 +141,7 @@
                         </div>
 
                         <hr class="mb-4">
-
+						<p><span class="required">*</span> Required</p>
                         <hr class="mb-4">
                 
                         <div class="mb-3">
@@ -169,7 +169,7 @@
                         </div>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="credit" name="paymentMethod" type="radio" name="credit" class="custom-control-input" checked="" >
+                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" >
                                 <label class="custom-control-label" for="credit">Credit card</label>
                             </div>
                             <div class="custom-control custom-radio">
@@ -205,7 +205,7 @@
                         </div>
                         <p aria-hidden="true" id="required-description"><span class="required">*</span>Required field</p>
                         <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" form="register">Register</button>
                         <hr class="mb-4">
                     </form>
                     <!-- End -->
