@@ -111,32 +111,32 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">First name<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="" required="">
                                 <div class="invalid-feedback"> Valid first name is required. </div>
 
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">Last name<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="" required="">
                                 <div class="invalid-feedback"> Valid last name is required. </div>
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label for="email">Email<span class="required">*</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
                             <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
                         </div>
 
                         <div class="mb-3">
                             <label for="password">Password<span class="required">*</span></label>
-                            <input type="password" class="form-control" id="password">
+                            <input type="password" class="form-control" name="password" id="password">
                             <div class="invalid-feedback"> Please enter a valid password</div>
                         </div>
 
                         <div class="mb-3">
                             <label for="password">Confirm Password<span class="required">*</span></label>
-                            <input type="password" class="form-control" id="passwordConfirmation">
+                            <input type="password" class="form-control" name="confirm" id="passwordConfirmation">
                             <div class="invalid-feedback"> Please enter a valid password</div>
                         </div>
 
@@ -146,16 +146,16 @@
                 
                         <div class="mb-3">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" placeholder="1234 Main St">
+                            <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St">
                         </div>
                         <div class="row">
                             <div class="col-md-5 mb-3">
-                                <label for="country">City</label>
-                                <input type="text" class="form-control" id="city" placeholder="Columbus">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Columbus">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="state">State</label>
-                                <select class="custom-select d-block w-100" id="state" >
+                                <select class="custom-select d-block w-100" id="state" name="state" >
                                     <option value="">Choose...</option>
                                     <option>Georgia</option>
                                 </select>
@@ -163,13 +163,13 @@
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="zip">Zip</label>
-                                <input type="text" class="form-control" id="zip" placeholder="" required="">
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="" required="">
 
                             </div>
                         </div>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" >
+                                <input id="credit" name="paymentMethod" type="radio" name="credit" class="custom-control-input" checked="" >
                                 <label class="custom-control-label" for="credit">Credit card</label>
                             </div>
                             <div class="custom-control custom-radio">
@@ -180,25 +180,25 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="cc-name">Name on card</label>
-                                <input type="text" class="form-control" id="cc-name" placeholder="" >
+                                <input type="text" class="form-control" id="cc-name" name="fullname" placeholder="" >
                                 <small class="text-muted">Full name as displayed on card</small>
 
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="cc-number">Credit card number</label>
-                                <input type="text" class="form-control" id="cc-number" placeholder="" >
+                                <input type="text" class="form-control" id="cc-number" name="cardNum" placeholder="" >
 
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <label for="cc-expiration">Expiration</label>
-                                <input type="text" class="form-control" id="cc-expiration" placeholder="" >
+                                <input type="text" class="form-control" id="cc-expiration" name="expiration" placeholder="" >
 
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="cc-cvv">CVV</label>
-                                <input type="text" class="form-control" id="cc-cvv" placeholder="" >
+                                <input type="text" class="form-control" id="cc-cvv" name="cvv" placeholder="" >
 
                             </div>
                             
