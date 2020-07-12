@@ -43,8 +43,17 @@ html, body {
     border: none;
 }
 
-nav .navbar-nav li a{
+#white{
     color: white !important;
+}
+
+.required{
+	color:red;
+}
+
+.btn-default{
+	background: orange;
+            
 }
 
 

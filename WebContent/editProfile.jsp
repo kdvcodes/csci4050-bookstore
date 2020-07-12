@@ -16,48 +16,83 @@
     <title>IMA Bookstore</title>
 </head>
 <body>
-
-<nav class="navbar  navbar-expand-sm">
-    <div class="container-fluid">
-        <a id="branding" class="navbar-brand" href="index.jsp">IMA Bookstore</a>
+<nav class="navbar navbar-expand-md navbar-dark">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    	<div class="navbar-header">
+	  		<a  class="navbar-brand" href="index.jsp">IMA Bookstore</a>
+	  	</div>
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="editProfile.jsp" class="nav-link">Profile</a></li>
-            <li class="nav-item"><a href="books.jsp" class="nav-link">Shop</a></li>
-            <li class="nav-item"><a href="shoppingCart.jsp" class="nav-link">Cart</a></li>
+            <li class="nav-item">
+                <a href="index.jsp" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="editProfile.jsp" class="nav-link">Profile</a>
+            </li>
+            <li class="nav-item">
+               <a href="books.jsp" class="nav-link">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a href="shoppingCart.jsp" class="nav-link">Cart</a>
+            </li>
         </ul>
-
-
-
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sign In
-            </button>
-            <div class="dropdown-menu dropdown-menu-right">
-                <form class="px-4 py-3">
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                            <label class="form-check-label" for="dropdownCheck">
-                                Remember me
-                            </label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
-                </form>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
-                <a class="dropdown-item" href="forgotPassword.jsp">Forgot password?</a>
-            </div>
-        </div>
+    </div>
+    
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            	<div class="container">
+				    <form class="form-inline">
+				        <div class="input-group" id="dropdown">
+				            <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				                Filter By
+				            </button>
+				            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				                <a class="dropdown-item" href="#">Title</a>
+				                <a class="dropdown-item" href="#">Author</a>
+				                <a class="dropdown-item" href="#">ISBN</a>
+				            </div>
+				        </div>
+				        <div class="input-group" id="search">
+				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
+				            <div class="input-group-btn">
+				                <button class="btn btn-primary" type="submit">Submit</button>
+				            </div>
+				        </div>
+				    </form>
+				</div>
+            </li>
+            <li class="nav-item">
+                <div class="dropdown">
+			      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			        Sign In
+			      </button>
+			      <div class="dropdown-menu dropdown-menu-right">
+			        <form class="px-4 py-3">
+			          <div class="form-group">
+			            <label for="exampleDropdownFormEmail1">Email address</label>
+			            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+			          </div>
+			          <div class="form-group">
+			            <label for="exampleDropdownFormPassword1">Password</label>
+			            <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+			          </div>
+			          <div class="form-group">
+			            <div class="form-check">
+			              <input type="checkbox" class="form-check-input" id="dropdownCheck">
+			              <label class="form-check-label" for="dropdownCheck">
+			                Remember me
+			              </label>
+			            </div>
+			          </div>
+			          <button type="submit" class="btn btn-primary">Sign in</button>
+			        </form>
+			        <div class="dropdown-divider"></div>
+			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
+			        <a class="dropdown-item" href="forgotPassword.jsp">Forgot password?</a>
+			      </div>
+			    </div>
+            </li>
+        </ul>
     </div>
 </nav>
 

@@ -17,48 +17,85 @@
 </head>
 <body>
 
-<nav class="navbar  navbar-expand-sm">
-    <div class="container-fluid">
-        <a id="branding" class="navbar-brand" href="index.jsp">IMA Bookstore</a>
+<nav class="navbar navbar-expand-md navbar-dark">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    	<div class="navbar-header">
+	  		<a  class="navbar-brand" href="index.jsp">IMA Bookstore</a>
+	  	</div>
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="editProfile.jsp" class="nav-link">Profile</a></li>
-            <li class="nav-item"><a href="books.jsp" class="nav-link">Shop</a></li>
-            <li class="nav-item"><a href="shoppingCart.jsp" class="nav-link">Cart</a></li>
+            <li class="nav-item">
+                <a href="index.jsp" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="editProfile.jsp" class="nav-link">Profile</a>
+            </li>
+            <li class="nav-item">
+               <a href="books.jsp" class="nav-link">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a href="shoppingCart.jsp" class="nav-link">Cart</a>
+            </li>
         </ul>
-
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sign In
-            </button>
-            <div class="dropdown-menu dropdown-menu-right">
-                <form class="px-4 py-3">
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                            <label class="form-check-label" for="dropdownCheck">
-                                Remember me
-                            </label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
-                </form>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
-                <a class="dropdown-item" href="forgotPassword.jsp">Forgot password?</a>
-            </div>
-        </div>
+    </div>
+    
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            	<div class="container">
+				    <form class="form-inline">
+				        <div class="input-group" id="dropdown">
+				            <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				                Filter By
+				            </button>
+				            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				                <a class="dropdown-item" href="#">Title</a>
+				                <a class="dropdown-item" href="#">Author</a>
+				                <a class="dropdown-item" href="#">ISBN</a>
+				            </div>
+				        </div>
+				        <div class="input-group" id="search">
+				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
+				            <div class="input-group-btn">
+				                <button class="btn btn-primary" type="submit">Submit</button>
+				            </div>
+				        </div>
+				    </form>
+				</div>
+            </li>
+            <li class="nav-item">
+                <div class="dropdown">
+			      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			        Sign In
+			      </button>
+			      <div class="dropdown-menu dropdown-menu-right">
+			        <form class="px-4 py-3">
+			          <div class="form-group">
+			            <label for="exampleDropdownFormEmail1">Email address</label>
+			            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+			          </div>
+			          <div class="form-group">
+			            <label for="exampleDropdownFormPassword1">Password</label>
+			            <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+			          </div>
+			          <div class="form-group">
+			            <div class="form-check">
+			              <input type="checkbox" class="form-check-input" id="dropdownCheck">
+			              <label class="form-check-label" for="dropdownCheck">
+			                Remember me
+			              </label>
+			            </div>
+			          </div>
+			          <button type="submit" class="btn btn-primary">Sign in</button>
+			        </form>
+			        <div class="dropdown-divider"></div>
+			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
+			        <a class="dropdown-item" href="forgotPassword.jsp">Forgot password?</a>
+			      </div>
+			    </div>
+            </li>
+        </ul>
     </div>
 </nav>
-
 <div class="px-4 px-lg-0">
     <!-- For demo purpose -->
     <div class="container text-white py-5 text-center">
@@ -73,32 +110,32 @@
                     <form class="needs-validation" novalidate="">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="firstName">*First name</label>
+                                <label for="firstName">First name<span class="required">*</span></label>
                                 <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
                                 <div class="invalid-feedback"> Valid first name is required. </div>
 
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="lastName">*Last name</label>
+                                <label for="lastName">Last name<span class="required">*</span></label>
                                 <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
                                 <div class="invalid-feedback"> Valid last name is required. </div>
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="email">*Email </label>
+                            <label for="email">Email<span class="required">*</span></label>
                             <input type="email" class="form-control" id="email" placeholder="you@example.com">
                             <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="password">*Password </label>
+                            <label for="password">Password<span class="required">*</span></label>
                             <input type="password" class="form-control" id="password">
                             <div class="invalid-feedback"> Please enter a valid password</div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="password">*Confirm Password </label>
+                            <label for="password">Confirm Password<span class="required">*</span></label>
                             <input type="password" class="form-control" id="passwordConfirmation">
                             <div class="invalid-feedback"> Please enter a valid password</div>
                         </div>
@@ -106,24 +143,21 @@
                         <hr class="mb-4">
 
                         <hr class="mb-4">
-                        <h4 class="mb-3">Optional</h4>
+                
                         <div class="mb-3">
                             <label for="address">Address</label>
                             <input type="text" class="form-control" id="address" placeholder="1234 Main St">
                         </div>
                         <div class="row">
                             <div class="col-md-5 mb-3">
-                                <label for="country">Country</label>
-                                <select class="custom-select d-block w-100" id="country" >
-                                    <option value="">Choose...</option>
-                                    <option>United States</option>
-                                </select>
+                                <label for="country">City</label>
+                                <input type="text" class="form-control" id="city" placeholder="Columbus">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="state">State</label>
                                 <select class="custom-select d-block w-100" id="state" >
                                     <option value="">Choose...</option>
-                                    <option>California</option>
+                                    <option>Georgia</option>
                                 </select>
 
                             </div>
@@ -167,7 +201,9 @@
                                 <input type="text" class="form-control" id="cc-cvv" placeholder="" >
 
                             </div>
+                            
                         </div>
+                        <p aria-hidden="true" id="required-description"><span class="required">*</span>Required field</p>
                         <hr class="mb-4">
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
                         <hr class="mb-4">
