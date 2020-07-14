@@ -121,7 +121,7 @@
             <div class="row">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
 
-                    <form class="needs-validation" novalidate="">
+                    <form class="needs-validation" novalidate="" method="POST" action="register">
                     
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -232,7 +232,7 @@
                          
                         
                         <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" form="register">Register</button>
                         <hr class="mb-4">
                     </form>
                     <!-- End -->
