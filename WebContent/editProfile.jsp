@@ -186,6 +186,14 @@
                                     <input class="form-control" type="text" value="***">
                                 </div>
                             </div>
+                            
+                            <div class="form-group">
+                            	<div class="col-lg-12">
+								  <input type="hidden" name="promotion" value="" />
+								  <input type="checkbox" name="promotion" checked="checked" />
+								  Subscribe to receive promotional emails!
+								</div>
+                            </div>  
 
                             <div class="form-group">
                                 <label class="col-md-3 control-label"></label>
@@ -193,7 +201,7 @@
                                     <input type="button" class="btn btn-primary" value="Save Changes">
                                 </div>
                             </div>
-
+                                                   
                         </form>
 
 

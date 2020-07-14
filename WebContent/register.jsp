@@ -122,6 +122,7 @@
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
 
                     <form class="needs-validation" novalidate="">
+                    
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">First name<span class="required">*</span></label>
@@ -155,8 +156,11 @@
                         </div>
 
                         <hr class="mb-4">
+                        
+                        <p aria-hidden="true" id="required-description"><span class="required">*</span>Required field</p>
 
                         <hr class="mb-4">
+                        
                 
                         <div class="mb-3">
                             <label for="address">Address</label>
@@ -217,7 +221,16 @@
                             </div>
                             
                         </div>
-                        <p aria-hidden="true" id="required-description"><span class="required">*</span>Required field</p>
+                       
+                            
+                       	<div>
+						  <input type="hidden" name="promotion" value="" />
+						  <input type="checkbox" name="promotion" checked="checked" />
+						  Subscribe to receive promotional emails!
+						</div>
+
+                         
+                        
                         <hr class="mb-4">
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
                         <hr class="mb-4">

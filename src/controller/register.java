@@ -55,6 +55,7 @@ public class register extends HttpServlet {
 		String cardNum = request.getParameter("cardNum");
 		String expiration = request.getParameter("expiration");
 		String cvv = request.getParameter("cvv");
+		String promotion = request.getParameter("promotion");
 		int userId = 1;
 		
 		if(password.equals(confirm)) {
