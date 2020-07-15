@@ -8,31 +8,16 @@ To change this template use File | Settings | File Templates.
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMA Bookstore</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .container{
-            margin-top: 30px;
-        }
-        .glyphicon-search{
-            font-size: 30px;
-        }
-        .btn-default{
-            background: orange;
-            width: 100px;
-            padding: 12.5px;
-        }
-        .form-control{
-            margin-right: 20px;
-        }
-        #dropdown{
-            margin-right: 20px;
-        }
-    </style>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="style.css">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  	<link rel="stylesheet" href="style.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<title>IMA Bookstore</title>
 </head>
 
 <body>
@@ -63,14 +48,17 @@ To change this template use File | Settings | File Templates.
             	<div class="container">
 				    <form class="form-inline">
 				        <div class="input-group" id="dropdown">
-				            <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				                Filter By
-				            </button>
-				            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				                <a class="dropdown-item" href="#">Title</a>
-				                <a class="dropdown-item" href="#">Author</a>
-				                <a class="dropdown-item" href="#">ISBN</a>
-				            </div>
+				            
+				            <div class="btn-group">
+							    <button type="button" class="form-control btn btn-default dropdown-toggle filterToggle" data-toggle="dropdown">
+							        Filter By <span class="caret"></span>
+							    </button>
+							    <div class="dropdown-menu" id="bookFilter" aria-labelledby="dropdownMenuButton">
+					                <a class="dropdown-item" href="#">Title</a>
+					                <a class="dropdown-item" href="#">Author</a>
+					                <a class="dropdown-item" href="#">ISBN</a>
+					            </div>
+							</div>
 				        </div>
 				        <div class="input-group" id="search">
 				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
@@ -115,6 +103,14 @@ To change this template use File | Settings | File Templates.
         </ul>
     </div>
 </nav>
+  
+<script>
+	$(document).ready(function(e) {   
+		$('#bookFilter a').on('click', function(){    
+		    $('.filterToggle').html($(this).html() + '<span class="caret"></span>');    
+		});
+	});
+</script>
 <div class="container">
     <form class="form-inline">
         <div class="input-group" id="dropdown">
@@ -194,8 +190,5 @@ To change this template use File | Settings | File Templates.
         </div>
     </div>
 </section>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
