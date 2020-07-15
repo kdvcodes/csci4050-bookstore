@@ -106,30 +106,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-
+					<div class="registration-email-error">${emailError}</div>
                     <form id="register" class="needs-validation" novalidate="" method="post" action="register">
+                        <h3>Account Information</h3>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="firstName">First name<span class="required">*</span></label>
-                                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="" required="">
+                                <label for="firstName">First name <span class="required">*</span></label>
+                                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name" value="" required="">
                                 <div class="invalid-feedback"> Valid first name is required. </div>
 
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="lastName">Last name<span class="required">*</span></label>
+                                <label for="lastName">Last name <span class="required">*</span></label>
                                 <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="" required="">
                                 <div class="invalid-feedback"> Valid last name is required. </div>
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="email">Email<span class="required">*</span></label>
+                            <label for="email">Email <span class="required">*</span></label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
                             <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="password">Password<span class="required">*</span></label>
+                            <label for="password">Password <span class="required">*</span></label>
                             <input type="password" class="form-control" name="password" id="password">
                             <div class="invalid-feedback"> Please enter a valid password</div>
                         </div>
@@ -139,13 +140,11 @@
                             <input type="password" class="form-control" name="confirm" id="passwordConfirmation">
                             <div class="invalid-feedback"> Please enter a valid password</div>
                         </div>
-
-                        <hr class="mb-4">
-						<p><span class="required">*</span> Required</p>
-                        <hr class="mb-4">
-                
+                        <br>
+                		
+                		<h3>Address Information</h3>
                         <div class="mb-3">
-                            <label for="address">Address</label>
+                            <label for="address">Street</label>
                             <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St">
                         </div>
                         <div class="row">
@@ -157,8 +156,58 @@
                                 <label for="state">State</label>
                                 <select class="custom-select d-block w-100" id="state" name="state" >
                                     <option value="">Choose...</option>
-                                    <option>Georgia</option>
-                                </select>
+									<option value="AL">Alabama</option>
+									<option value="AK">Alaska</option>
+									<option value="AZ">Arizona</option>
+									<option value="AR">Arkansas</option>
+									<option value="CA">California</option>
+									<option value="CO">Colorado</option>
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="DC">District Of Columbia</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="HI">Hawaii</option>
+									<option value="ID">Idaho</option>
+									<option value="IL">Illinois</option>
+									<option value="IN">Indiana</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NV">Nevada</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NM">New Mexico</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="ND">North Dakota</option>
+									<option value="OH">Ohio</option>
+									<option value="OK">Oklahoma</option>
+									<option value="OR">Oregon</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="SD">South Dakota</option>
+									<option value="TN">Tennessee</option>
+									<option value="TX">Texas</option>
+									<option value="UT">Utah</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WA">Washington</option>
+									<option value="WV">West Virginia</option>
+									<option value="WI">Wisconsin</option>
+									<option value="WY">Wyoming</option>
+									</select>
 
                             </div>
                             <div class="col-md-3 mb-3">
@@ -167,13 +216,15 @@
 
                             </div>
                         </div>
+                        <br>
+                        <h3>Payment Information</h3>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" >
+                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" value="credit">
                                 <label class="custom-control-label" for="credit">Credit card</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" >
+                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" value="debit">
                                 <label class="custom-control-label" for="debit">Debit card</label>
                             </div>
                         </div>
