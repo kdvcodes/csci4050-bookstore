@@ -14,7 +14,7 @@
   	<title>IMA Bookstore</title>
 </head>
 <body>
-  	<nav class="navbar navbar-expand-md navbar-dark">
+  <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
 	  		<a  class="navbar-brand" href="index.jsp">IMA Bookstore</a>
@@ -22,9 +22,6 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a href="index.jsp" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="editProfile.jsp" class="nav-link">Profile</a>
             </li>
             <li class="nav-item">
                <a href="books.jsp" class="nav-link">Shop</a>
@@ -71,7 +68,8 @@
 			      <div class="dropdown-menu dropdown-menu-right">
 			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
-			        <a class="dropdown-item" href="forgotPassword.jsp">Forgot password?</a>
+			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
+			        
 			      </div>
 			    </div>
             </li>
@@ -104,7 +102,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry1.jpeg" alt="img" width="200" height="300">
+            <img src="images/books/01.jpeg" alt="img" width="200" height="300">
           </a>
           <!--  <h4><jsp:include page="/getBookName"></jsp:include></h4> -->
           <h4>Harry Potter and the Sorcerer's Stone</h4>
@@ -114,7 +112,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry2.jpg" alt="img" width="200" height="300">
+            <img src="images/books/02.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Chamber of Secrets</h4>
           <h6><span class="price">$19</span> </h6>
@@ -123,7 +121,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry3.jpg" alt="img" width="200" height="300">
+            <img src="images/books/03.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Prisoner of Azkaban</h4>
           <h6><span class="price">$49</span> </h6>
@@ -132,7 +130,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/04.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$49</span> </h6>
@@ -154,7 +152,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>
@@ -163,7 +161,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>
@@ -172,7 +170,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>
@@ -181,7 +179,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>

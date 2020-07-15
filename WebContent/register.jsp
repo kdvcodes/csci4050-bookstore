@@ -30,9 +30,6 @@
                 <a href="index.jsp" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="editProfile.jsp" class="nav-link">Profile</a>
-            </li>
-            <li class="nav-item">
                <a href="books.jsp" class="nav-link">Shop</a>
             </li>
             <li class="nav-item">
@@ -77,7 +74,8 @@
 			      <div class="dropdown-menu dropdown-menu-right">
 			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
-			        <a class="dropdown-item" href="forgotPassword.jsp">Forgot password?</a>
+			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
+			        
 			      </div>
 			    </div>
             </li>

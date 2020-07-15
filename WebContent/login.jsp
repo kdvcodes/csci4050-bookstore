@@ -20,7 +20,7 @@
   	</style>
 </head>
 <body>
-  	<nav class="navbar navbar-expand-md navbar-dark">
+<nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
 	  		<a  class="navbar-brand" href="index.jsp">IMA Bookstore</a>
@@ -28,9 +28,6 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a href="index.jsp" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="editProfile.jsp" class="nav-link">Profile</a>
             </li>
             <li class="nav-item">
                <a href="books.jsp" class="nav-link">Shop</a>
@@ -77,7 +74,8 @@
 			      <div class="dropdown-menu dropdown-menu-right">
 			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
-			        <a class="dropdown-item" href="forgotPassword.jsp">Forgot password?</a>
+			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
+			        
 			      </div>
 			    </div>
             </li>
@@ -94,7 +92,7 @@
 		});
 	});
 </script>
-</nav>
+
 
  <div class="px-4 px-lg-0">
     <!-- For demo purpose -->
@@ -110,16 +108,21 @@
                     <form class="needs-validation" method="post" action="login">
 
                         <div class="mb-3">
-                            <label for="email">Email <span class="required">*</span></label>
+                            <label for="email">Email </label>
                             <input type="email" class="form-control" id="email" name="loginEmail" placeholder="you@example.com">
                             <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="password">Password <span class="required">*</span></label>
+                            <label for="password">Password </label>
                             <input type="password" class="form-control" name="loginPassword" id="password">
                             <div class="invalid-feedback"> Please enter a valid password</div>
                         </div>
+                        
+                         <div class="mb-3">
+                             <a href="forgotPassword.jsp">Forgot password?</a>
+                        </div>
+                        
                         
                         
                         <button class="btn btn-primary btn-lg btn-block" type="submit" form="login">Sign In</button>
