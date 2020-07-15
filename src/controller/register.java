@@ -62,15 +62,11 @@ public class register extends HttpServlet {
 		String cardNum = request.getParameter("cardNum");
 		String expiration = request.getParameter("expiration");
 		String cvv = request.getParameter("cvv");
-<<<<<<< HEAD
+		String promotion = request.getParameter("promotion");
 		int userId = 0;
 		int addressId = 0;
 		int paymentId = 0;
 		boolean userIdSuccess = false;
-=======
-		String promotion = request.getParameter("promotion");
-		int userId = 1;
->>>>>>> refs/remotes/origin/master
 		
 		if(password.equals(confirm)) {
 			try {
