@@ -20,7 +20,7 @@
   	<title>IMA Bookstore</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark">
+  <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
 	  		<a  class="navbar-brand" href="index.jsp">IMA Bookstore</a>
@@ -28,9 +28,6 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a href="index.jsp" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="editProfile.jsp" class="nav-link">Profile</a>
             </li>
             <li class="nav-item">
                <a href="books.jsp" class="nav-link">Shop</a>
@@ -68,41 +65,23 @@
 				    </form>
 				</div>
             </li>
+            
             <li class="nav-item">
                 <div class="dropdown">
 			      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			        Sign In
+			        Account
 			      </button>
 			      <div class="dropdown-menu dropdown-menu-right">
-			        <form class="px-4 py-3">
-			          <div class="form-group">
-			            <label for="exampleDropdownFormEmail1">Email address</label>
-			            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-			          </div>
-			          <div class="form-group">
-			            <label for="exampleDropdownFormPassword1">Password</label>
-			            <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-			          </div>
-			          <div class="form-group">
-			            <div class="form-check">
-			              <input type="checkbox" class="form-check-input" id="dropdownCheck">
-			              <label class="form-check-label" for="dropdownCheck">
-			                Remember me
-			              </label>
-			            </div>
-			          </div>
-			          <button type="submit" class="btn btn-primary">Sign in</button>
-			        </form>
-			        <div class="dropdown-divider"></div>
+			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
-			        <a class="dropdown-item" href="forgotPassword.jsp">Forgot password?</a>
+			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
+			        
 			      </div>
 			    </div>
             </li>
         </ul>
     </div>
 </nav>
-  
 <script>
 	$(document).ready(function(e) {   
 		$('#bookFilter a').on('click', function(){    

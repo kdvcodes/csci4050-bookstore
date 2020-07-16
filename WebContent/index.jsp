@@ -14,8 +14,7 @@
   	<title>IMA Bookstore</title>
 </head>
 <body>
-  	
-  	<nav class="navbar navbar-expand-md navbar-dark">
+  <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
 	  		<a  class="navbar-brand" href="index.jsp">IMA Bookstore</a>
@@ -23,9 +22,6 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a href="index.jsp" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="editProfile.jsp" class="nav-link">Profile</a>
             </li>
             <li class="nav-item">
                <a href="books.jsp" class="nav-link">Shop</a>
@@ -63,34 +59,17 @@
 				    </form>
 				</div>
             </li>
+            
             <li class="nav-item">
                 <div class="dropdown">
 			      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			        Sign In
+			        Account
 			      </button>
 			      <div class="dropdown-menu dropdown-menu-right">
-			        <form class="px-4 py-3">
-			          <div class="form-group">
-			            <label for="exampleDropdownFormEmail1">Email address</label>
-			            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-			          </div>
-			          <div class="form-group">
-			            <label for="exampleDropdownFormPassword1">Password</label>
-			            <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-			          </div>
-			          <div class="form-group">
-			            <div class="form-check">
-			              <input type="checkbox" class="form-check-input" id="dropdownCheck">
-			              <label class="form-check-label" for="dropdownCheck">
-			                Remember me
-			              </label>
-			            </div>
-			          </div>
-			          <button type="submit" class="btn btn-primary">Sign in</button>
-			        </form>
-			        <div class="dropdown-divider"></div>
+			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
-			        <a class="dropdown-item" href="forgotPassword.jsp">Forgot password?</a>
+			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
+			        
 			      </div>
 			    </div>
             </li>
@@ -123,7 +102,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry1.jpeg" alt="img" width="200" height="300">
+            <img src="images/books/01.jpeg" alt="img" width="200" height="300">
           </a>
           <!--  <h4><jsp:include page="/getBookName"></jsp:include></h4> -->
           <h4>Harry Potter and the Sorcerer's Stone</h4>
@@ -133,7 +112,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry2.jpg" alt="img" width="200" height="300">
+            <img src="images/books/02.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Chamber of Secrets</h4>
           <h6><span class="price">$19</span> </h6>
@@ -142,7 +121,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry3.jpg" alt="img" width="200" height="300">
+            <img src="images/books/03.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Prisoner of Azkaban</h4>
           <h6><span class="price">$49</span> </h6>
@@ -151,7 +130,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/04.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$49</span> </h6>
@@ -173,7 +152,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>
@@ -182,7 +161,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>
@@ -191,7 +170,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>
@@ -200,7 +179,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>

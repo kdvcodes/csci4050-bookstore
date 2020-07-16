@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: kdv
-  Date: 7/2/20
-  Time: 5:19 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="en">
 <html lang="en">
 <head>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -18,9 +12,15 @@
   	<link rel="stylesheet" href="style.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   	<title>IMA Bookstore</title>
+  	<style type="text/css">
+  		.imgcontainer {
+		  text-align: center;
+		  margin: 24px 0 12px 0;
+		}
+  	</style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark">
+<nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
 	  		<a  class="navbar-brand" href="index.jsp">IMA Bookstore</a>
@@ -82,7 +82,9 @@
         </ul>
     </div>
 </nav>
-  
+    
+    
+
 <script>
 	$(document).ready(function(e) {   
 		$('#bookFilter a').on('click', function(){    
@@ -90,34 +92,48 @@
 		});
 	});
 </script>
-<section class="static about-sec">
-    <div class="container" id="order">
-        <h1>Order History</h1>
-        <p>View your order and reorder your books</p>
-        <form class="form-inline">
-            <h5> <a href="product_single.jsp">ID 0021 : Harry Potter : </a></h5>
-            <button type="button" class="btn btn-info"> Reorder </button>
-        </form>
-
-        <form class="form-inline">
-            <h5> <a href="product_single.jsp">ID 0020 : Harry Potter : </a></h5>
-            <button type="button" class="btn btn-info"> Reorder </button>
-        </form>
-
-        <form class="form-inline">
-            <h5> <a href="product_single.jsp">ID 0019 : Harry Potter : </a></h5>
-            <button type="button" class="btn btn-info"> Reorder </button>
-        </form>
-
-        <form class="form-inline">
-            <h5> <a href="product_single.jsp">ID 0018 : Harry Potter : </a></h5>
-            <button type="button" class="btn btn-info"> Reorder </button>
-        </form>
 
 
-
+ <div class="px-4 px-lg-0">
+    <!-- For demo purpose -->
+    <div class="container text-white py-5 text-center">
+        <h1 class="display-4">Sign In</h1>
     </div>
-</section>
+
+    <div class="pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+					<div class="registration-email-error">${emailError}</div>
+                    <form class="needs-validation" method="post" action="login">
+
+                        <div class="mb-3">
+                            <label for="email">Email </label>
+                            <input type="email" class="form-control" id="email" name="loginEmail" placeholder="you@example.com">
+                            <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password">Password </label>
+                            <input type="password" class="form-control" name="loginPassword" id="password">
+                            <div class="invalid-feedback"> Please enter a valid password</div>
+                        </div>
+                        
+                         <div class="mb-3">
+                             <a href="forgotPassword.jsp">Forgot password?</a>
+                        </div>
+                        
+                        
+                        
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" form="login">Sign In</button>
+                     
+
+                   	</form>
+           		</div>
+           	</div>
+       </div>
+   </div>
+</div>
 
 </body>
 </html>
