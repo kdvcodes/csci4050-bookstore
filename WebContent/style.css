@@ -52,8 +52,11 @@ html, body {
 }
 
 .btn-default{
-	background: orange;
-            
+	background: orange;           
+}
+
+.registration-email-error {
+	color: red;
 }
 
 
