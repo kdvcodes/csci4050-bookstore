@@ -75,6 +75,7 @@
 			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
 			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
+			          <a class="dropdown-item" href="adminHome.jsp">Admin</a>
 			        
 			      </div>
 			    </div>

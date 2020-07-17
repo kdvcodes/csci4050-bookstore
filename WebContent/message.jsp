@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: kdv
-  Date: 7/2/20
-  Time: 5:18 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="en">
 <html lang="en">
 <head>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -18,9 +12,15 @@
   	<link rel="stylesheet" href="style.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   	<title>IMA Bookstore</title>
+  	<style type="text/css">
+  		.imgcontainer {
+		  text-align: center;
+		  margin: 24px 0 12px 0;
+		}
+  	</style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark">
+<nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
 	  		<a  class="navbar-brand" href="index.jsp">IMA Bookstore</a>
@@ -83,7 +83,9 @@
         </ul>
     </div>
 </nav>
-  
+    
+    
+
 <script>
 	$(document).ready(function(e) {   
 		$('#bookFilter a').on('click', function(){    
@@ -91,77 +93,24 @@
 		});
 	});
 </script>
-<div class="container-fluid" id="edit">
-    <div class="py-5">
-        <h1>Manage Books</h1>
+
+
+ <div class="px-4 px-lg-0">
+    <!-- For demo purpose -->
+    <div class="container text-white py-5 text-center">
+        <h1 class="display-4">Messages</h1>
     </div>
 
-    <!-- edit form column -->
-    <div class="col-md-9 personal-info">
-        <form class="form-horizontal" role="form">
-            <div class="form-group">
-                <label class="col-lg-3 control-label">ISBN</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Title</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Author</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-md-3 control-label">Category</label>
-                <div class="col-md-8">
-                    <input class="form-control" type="password" >
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">Quantity in Stock</label>
-                <div class="col-md-8">
-                    <input class="form-control" type="password">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Price</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Publisher</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Publication Year</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-md-3 control-label"></label>
-                <div class="col-md-8">
-                    <input type="button" class="btn btn-primary" value="Add Book">
-                </div>
-            </div>
-
-        </form>
-
-
-
-    </div>
+    <div class="pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+					<div class="messages"></div>
+                   
+           		</div>
+           	</div>
+       </div>
+   </div>
 </div>
 
 </body>
