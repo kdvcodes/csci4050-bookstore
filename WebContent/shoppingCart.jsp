@@ -17,7 +17,7 @@
   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   	<link rel="stylesheet" href="style.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  	<title>IMA Bookstore</title>
+  	<title>Cart</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-dark">
@@ -42,7 +42,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             	<div class="container">
-				    <form class="form-inline">
+				     <form class="form-inline" id="search" method="post" action="search">
 				        <div class="input-group" id="dropdown">
 				            
 				            <div class="btn-group">
@@ -59,7 +59,7 @@
 				        <div class="input-group" id="search">
 				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
 				            <div class="input-group-btn">
-				                <button class="btn btn-primary" type="submit">Submit</button>
+				                <button class="btn btn-primary" type="submit" form="search">Submit</button>
 				            </div>
 				        </div>
 				    </form>
@@ -126,7 +126,7 @@
                             <tr>
                                 <th scope="row" class="border-0">
                                     <div class="p-2">
-                                        <img src="images/harry1.jpeg" alt="hello" width="70" class="img-fluid rounded shadow-sm">
+                                        <img src="images/books/01.jpeg" alt="hello" width="70" class="img-fluid rounded shadow-sm">
                                         <div class="ml-3 d-inline-block align-middle">
                                             <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Harry Potter and the Sorcerer's Stone</a></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
                                         </div>
@@ -145,7 +145,7 @@
                             <tr>
                                 <th scope="row">
                                     <div class="p-2">
-                                        <img src="images/harry2.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                        <img src="images/books/02.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
                                         <div class="ml-3 d-inline-block align-middle">
                                             <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Harry Potter and the Chamber of Secrets</a></h5><span class="text-muted font-weight-normal font-italic"></span>
                                         </div>
@@ -165,7 +165,7 @@
                             <tr>
                                 <th scope="row">
                                     <div class="p-2">
-                                        <img src="images/harry3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                        <img src="images/books/03.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
                                         <div class="ml-3 d-inline-block align-middle">
                                             <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Harry Potter and the Prisoner of Azkaban</a></h5><span class="text-muted font-weight-normal font-italic"></span>
                                         </div>

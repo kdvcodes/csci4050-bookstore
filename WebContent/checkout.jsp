@@ -17,7 +17,7 @@
   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   	<link rel="stylesheet" href="style.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  	<title>IMA Bookstore</title>
+  	<title>Checkout</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-dark">
@@ -42,7 +42,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             	<div class="container">
-				    <form class="form-inline">
+				     <form class="form-inline" id="search" method="post" action="search">
 				        <div class="input-group" id="dropdown">
 				            
 				            <div class="btn-group">
@@ -59,7 +59,7 @@
 				        <div class="input-group" id="search">
 				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
 				            <div class="input-group-btn">
-				                <button class="btn btn-primary" type="submit">Submit</button>
+				                <button class="btn btn-primary" type="submit" form="search">Submit</button>
 				            </div>
 				        </div>
 				    </form>
@@ -153,29 +153,29 @@
                         </div>
                         <div class="col-md-8 order-md-1">
                             <h4 class="mb-3">Billing Address</h4>
-                            <form class="needs-validation" novalidate="">
+                            <form id="checkout" class="needs-validation" novalidate="" action="checkout" method="post">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="firstName">First name</label>
-                                        <input type="text" class="form-control" id="firstName" placeholder="Jane" value="" required="">
+                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Jane" value="" required="">
                                         <div class="invalid-feedback"> Valid first name is required. </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="lastName">Last name</label>
-                                        <input type="text" class="form-control" id="lastName" placeholder="Smith" value="" required="">
+                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Smith" value="" required="">
                                         <div class="invalid-feedback"> Valid last name is required. </div>
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="address">Address</label>
-                                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                                    <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" required="">
                                     <div class="invalid-feedback"> Please enter your shipping address. </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 mb-3">
                                         <label for="country">Country</label>
-                                        <select class="custom-select d-block w-100" id="country" required="">
+                                        <select class="custom-select d-block w-100" name="country" id="country" required="">
                                             <option value="">United States</option>
                                             <option>Canada</option>
                                         </select>
@@ -183,7 +183,7 @@
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="state">State</label>
-                                        <select class="custom-select d-block w-100" id="state" required="">
+                                        <select class="custom-select d-block w-100" name="state"id="state" required="">
                                             <option value="">Georgia</option>
                                             <option>Alabama</option>
                                         </select>
@@ -191,13 +191,13 @@
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="zip">Zip</label>
-                                        <input type="text" class="form-control" id="zip" placeholder="31909" required="">
+                                        <input type="text" class="form-control" name="zip" id="zip" placeholder="31909" required="">
                                         <div class="invalid-feedback"> Zip code required. </div>
                                     </div>
                                 </div>
                                 <hr class="mb-4">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="same-address">
+                                    <input type="checkbox" class="custom-control-input" name="same-address" id="same-address">
                                     <label class="custom-control-label" for="same-address">Use saved address for shipping and billing</label>
                                 </div>
                                 <hr class="mb-4">
@@ -215,35 +215,35 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="cc-name">Name on card</label>
-                                        <input type="text" class="form-control" id="cc-name" placeholder="Jane Smith" required="">
+                                        <input type="text" class="form-control" name="nameOnCard" id="cc-name" placeholder="Jane Smith" required="">
                                         <small class="text-muted">Full name as displayed on card</small>
                                         <div class="invalid-feedback"> Name on card is required </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="cc-number">Credit card number</label>
-                                        <input type="text" class="form-control" id="cc-number" placeholder="*********" required="">
+                                        <input type="text" class="form-control" name="cc-number" id="cc-number" placeholder="*********" required="">
                                         <div class="invalid-feedback"> Credit card number is required </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3 mb-3">
                                         <label for="cc-expiration">Expiration</label>
-                                        <input type="text" class="form-control" id="cc-expiration" placeholder="04/2026" required="">
+                                        <input type="text" class="form-control" name="expiration" id="cc-expiration" placeholder="04/2026" required="">
                                         <div class="invalid-feedback"> Expiration date required </div>
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="cc-cvv">CVV</label>
-                                        <input type="text" class="form-control" id="cc-cvv" placeholder="***" required="">
+                                        <input type="text" class="form-control" name="cvv" id="cc-cvv" placeholder="***" required="">
                                         <div class="invalid-feedback"> Security code required </div>
                                     </div>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="same-payment">
+                                    <input type="checkbox" class="custom-control-input" name="same-payment" id="same-payment">
                                     <label class="custom-control-label" for="same-address">Use saved payement method</label>
                                 </div>
 
                                 <hr class="mb-4">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Checkout</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit" form="checkout">Checkout</button>
                             </form>
                         </div>
                     </div>
