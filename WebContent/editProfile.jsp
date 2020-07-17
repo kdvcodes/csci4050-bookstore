@@ -20,6 +20,7 @@
   	<title>IMA Bookstore</title>
 </head>
 <body>
+<jsp:include page="/editProfile"></jsp:include>
   	<nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
@@ -105,8 +106,22 @@
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
 
                     <div class="col-md-12 personal-info">
+                    <%
+						String userName = null;
+						Cookie[] cookies = request.getCookies();
+						if(cookies !=null){
+							for(Cookie cookie : cookies){
+								if(cookie.getName().equals("user")) userName = cookie.getValue();
+							} // for
+						} // if
+						System.out.println("MESSAGE BOARD:: Current User Name; " + userName);
+						if(userName != null) {
+							out.println("Logged in as <b>" + userName + "</b>");
+						} // if
+					%>
+                    <hr>
                         <form class="form-horizontal" role="form" method="post">
-                        
+                        <div class="error-message">${passwordMismatchError}</div>
                         	<h3>Personal Information</h3>
                         	
                         	
@@ -201,6 +216,16 @@
                         </div>
                             
                             <h3>Payment Information</h3>
+                            <div class="form-group d-block my-3">
+	                            <div class="custom-control custom-radio">
+	                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" value="credit">
+	                                <label class="custom-control-label" for="credit">Credit card</label>
+	                            </div>
+	                            <div class="custom-control custom-radio">
+	                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" value="debit">
+	                                <label class="custom-control-label" for="debit">Debit card</label>
+	                            </div>
+                       		</div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Name on Card</label>
                                 <div class="col-lg-12">

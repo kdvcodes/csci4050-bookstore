@@ -95,6 +95,7 @@ public class register extends HttpServlet {
 						// handle error, email exist
 						request.setAttribute("emailError", "Email already used by another user!\n");
 						request.getRequestDispatcher("register.jsp").forward(request, response);
+						return;
 					} // if
 				} // if
 				
@@ -159,7 +160,7 @@ public class register extends HttpServlet {
 		
 		// registration done and successful, passing the user to registration confirmation page
 //		request.setAttribute("doneRegistration", "Thank you for registering for IMA BookStore. Please check your email for confirmation email!\n");
-		request.getRequestDispatcher("regCOnfirmation.jsp").forward(request, response);
+		request.getRequestDispatcher("regConfirmation.jsp").forward(request, response);
 		
 		//sending registration email
 		if(registerIntoBD) {
