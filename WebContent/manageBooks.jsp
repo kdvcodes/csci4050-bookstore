@@ -17,7 +17,7 @@
   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   	<link rel="stylesheet" href="style.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  	<title>IMA Bookstore</title>
+  	<title>Manage Books</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-dark">
@@ -42,7 +42,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             	<div class="container">
-				    <form class="form-inline">
+				    <form class="form-inline" id="search" method="post" action="search">
 				        <div class="input-group" id="dropdown">
 				            
 				            <div class="btn-group">
@@ -59,7 +59,7 @@
 				        <div class="input-group" id="search">
 				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
 				            <div class="input-group-btn">
-				                <button class="btn btn-primary" type="submit">Submit</button>
+				                <button class="btn btn-primary" type="submit" form="search">Submit</button>
 				            </div>
 				        </div>
 				    </form>
@@ -99,62 +99,62 @@
 
     <!-- edit form column -->
     <div class="col-md-9 personal-info">
-        <form class="form-horizontal" role="form">
+        <form id="manage" class="form-horizontal" role="form" method="post" action="manage">
             <div class="form-group">
                 <label class="col-lg-3 control-label">ISBN</label>
                 <div class="col-lg-8">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="isbn">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-3 control-label">Title</label>
                 <div class="col-lg-8">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="title">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-lg-3 control-label">Author</label>
                 <div class="col-lg-8">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="author">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-md-3 control-label">Category</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="password" >
+                    <input class="form-control" type="password" name="category">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label">Quantity in Stock</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="password">
+                    <input class="form-control" type="password" name="quantity">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-3 control-label">Price</label>
                 <div class="col-lg-8">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="price">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-3 control-label">Publisher</label>
                 <div class="col-lg-8">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="pub">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-3 control-label">Publication Year</label>
                 <div class="col-lg-8">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="year">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-md-3 control-label"></label>
                 <div class="col-md-8">
-                    <input type="button" class="btn btn-primary" value="Add Book">
+                    <input type="button" class="btn btn-primary" value="Add Book" name="addBook">
                 </div>
             </div>
 

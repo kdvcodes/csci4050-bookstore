@@ -36,7 +36,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             	<div class="container">
-				    <form class="form-inline">
+				   <form class="form-inline" id="search" method="post" action="search">
 				        <div class="input-group" id="dropdown">
 				            
 				            <div class="btn-group">
@@ -53,7 +53,7 @@
 				        <div class="input-group" id="search">
 				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
 				            <div class="input-group-btn">
-				                <button class="btn btn-primary" type="submit">Submit</button>
+				                <button class="btn btn-primary" type="submit" form="search">Submit</button>
 				            </div>
 				        </div>
 				    </form>
@@ -106,7 +106,6 @@
           <a href="product_single.jsp">
             <img src="images/books/01.jpeg" alt="img" width="200" height="300">
           </a>
-          <!--  <h4><jsp:include page="/getBookName"></jsp:include></h4> -->
           <h4>Harry Potter and the Sorcerer's Stone</h4>
           <h6><span class="price">$29</span></h6>
         </div>
@@ -154,7 +153,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/04.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>
@@ -163,7 +162,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/04.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>
@@ -172,7 +171,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/04.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>
@@ -181,7 +180,7 @@
       <div class="col-lg-3 col-md-3 col-sm-4">
         <div class="item">
           <a href="product_single.jsp">
-            <img src="images/books/harry4.jpg" alt="img" width="200" height="300">
+            <img src="images/books/04.jpg" alt="img" width="200" height="300">
           </a>
           <h4>Harry Potter and the Goblet of Fire</h4>
           <h6><span class="price">$19</span> </h6>
