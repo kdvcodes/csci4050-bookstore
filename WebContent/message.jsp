@@ -98,38 +98,15 @@
  <div class="px-4 px-lg-0">
     <!-- For demo purpose -->
     <div class="container text-white py-5 text-center">
-        <h1 class="display-4">Sign In</h1>
+        <h1 class="display-4">Messages</h1>
     </div>
 
     <div class="pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-					<div class="registration-email-error">${emailError}</div>
-                    <form class="needs-validation" method="post" action="login">
-
-                        <div class="mb-3">
-                            <label for="email">Email </label>
-                            <input type="email" class="form-control" id="email" name="loginEmail" placeholder="you@example.com">
-                            <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="password">Password </label>
-                            <input type="password" class="form-control" name="loginPassword" id="password">
-                            <div class="invalid-feedback"> Please enter a valid password</div>
-                        </div>
-                        
-                         <div class="mb-3">
-                             <a href="forgotPassword.jsp">Forgot password?</a>
-                        </div>
-                        
-                        
-                        
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" form="login">Sign In</button>
-                     
-
-                   	</form>
+					<div class="messages"></div>
+                   
            		</div>
            	</div>
        </div>
