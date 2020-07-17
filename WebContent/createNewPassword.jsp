@@ -100,13 +100,13 @@
  <div class="px-4 px-lg-0">
     <!-- For demo purpose -->
     <div class="container text-white py-5 text-center">
-        <h1 class="display-4">Sign In</h1>
+        <h1 class="display-4">Create New Password</h1>
     </div>
 
     <div class="pb-5">
-        <div class="container">
+        <div class="container col-md-4">
             <div class="row">
-                <div class="col-lg-6 p-5 bg-white rounded shadow-sm mb-5">
+                <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
                    	<form id="newPass" class="needs-validation" method="post" action="setNewPassword">
 						<div class="message">${passwordChangeAccountMessage}</div>
                         <div class="mb-3">
