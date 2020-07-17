@@ -84,4 +84,14 @@
     <servlet-name>forgotPassword</servlet-name>
     <url-pattern>/forgotPassword</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>setNewPassword</display-name>
+    <servlet-name>setNewPassword</servlet-name>
+    <servlet-class>controller.setNewPassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>setNewPassword</servlet-name>
+    <url-pattern>/setNewPassword</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -107,7 +107,7 @@
                   <p>You can reset your password here.</p>
                   <div class="panel-body">
     
-                    <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                    <form id="register-form" role="form" autocomplete="off" class="form" method="post" action="forgotPassword">
     
                       <div class="form-group">
                         <div class="input-group">

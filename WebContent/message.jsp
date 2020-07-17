@@ -125,6 +125,8 @@
 					%>
 					<div class="error-message">${userTypeError}</div>
 					<div class="message">${activationMessage}</div>
+					<div class="message">${passwordRecoveryMessage}</div>
+					<div class="message">${passwordRequest}</div>
                    	
                    	</div>
            		</div>
