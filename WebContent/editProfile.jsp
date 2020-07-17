@@ -255,13 +255,13 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">New Password</label>
                                 <div class="col-md-12">
-                                    <input class="form-control" type="password" value="11111122333" name="newPassword">
+                                    <input class="form-control" type="password" value="" name="newPassword">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Confirm New Password</label>
                                 <div class="col-md-12">
-                                    <input class="form-control" type="password" value="11111122333" name="newPasswordConfirm">
+                                    <input class="form-control" type="password" value="" name="newPasswordConfirm">
                                 </div>
                             </div>
                             
@@ -269,7 +269,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Current Password</label>
                                 <div class="col-md-12">
-                                    <input class="form-control" type="password" value="11111122333" name="currentPasswordConfirm">
+                                    <input class="form-control" type="password" value="" name="currentPasswordConfirm">
                                 </div>
                             </div>
                             

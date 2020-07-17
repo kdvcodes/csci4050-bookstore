@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import controller.registrationConfirmation.SMTPAuthenticator;
 
 import java.net.http.HttpRequest;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
@@ -48,6 +51,32 @@ public class forgotPassword extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("Hello from email generator!");
+		
+		try {
+			Connection con = DatabaseConnection.initializeDatabase();
+			
+			if(request.getParameter("email") != null) {
+				int count = 0;
+				
+				String emailCheckQuery = "SELECT count(userEmail) FROM bookstore.user where userEmail = \"" + request.getParameter("email") + "\";";
+				PreparedStatement emailCheckStatement = con.prepareStatement(emailCheckQuery);
+				ResultSet rs = emailCheckStatement.executeQuery();
+				
+				while(rs.next()) {
+					count += Integer.parseInt(rs.getString("count(userEmail)"));
+				} // while
+				
+				if(count < 1) {
+					// handle error, email exist
+					request.setAttribute("emailError", "Email does not is not registered with a user yet!\n");
+					request.getRequestDispatcher("forgotPassword.jsp").forward(request, response);
+					return;
+				} // if
+			}
+		} catch(Exception e) {
+			System.out.println("Failed on forgotPassword servlet!");
+		}
+		
 		if(request.getParameter("email") != null) {
 			Properties props = new Properties();
 			props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
