@@ -80,10 +80,25 @@ public class login extends HttpServlet {
 						
 						if(activatedValue == 1) {
 							userActivated = true;
-						} // if
-					}
+							loginUser();
+						} else {
+							// error with activation code in db being 0
+							request.setAttribute("activationError", "Account not activated. Please activate your account.");
+							request.getRequestDispatcher("login.jsp").forward(request, response);
+						}
+					} else {
+						// error with this password not matching the one in the db
+						request.setAttribute("passwordError", "Incorrect password. Please try again.");
+						request.getRequestDispatcher("login.jsp").forward(request, response);
+					} // if else
+				} else if(count < 1) {
+					// email doesn't exist in the db
+					request.setAttribute("emailError", "Your email has not been registered yet!");
+					request.getRequestDispatcher("login.jsp").forward(request, response);
 				} else {
-					// HANDLE ERRORS, USER EMAIL NOT LONGER THAN 0
+					// error with this email in the database
+					request.setAttribute("emailError", "We're encountering some issues with your account, please contact us for resolution!");
+					request.getRequestDispatcher("login.jsp").forward(request, response);
 				}
 			} // if
 			
@@ -91,5 +106,8 @@ public class login extends HttpServlet {
 			e.printStackTrace();
 		}
 	} // doPost
+	
+	// create user session
+	public void loginUser() {}
 
 }

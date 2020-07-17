@@ -1,14 +1,14 @@
 package controller;
 
+//import java.util.Properties;
+//import javax.mail.*;
+//import javax.mail.internet.*;
 import java.io.IOException;
-
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Random;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "register", urlPatterns =("/register"))
+//@WebServlet(name = "register", urlPatterns =("/register"))
 /**
  * Servlet implementation class register
  */
@@ -45,6 +45,8 @@ public class register extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
+		System.out.println("Hello From Register Servlet!!");
+		
 		Random rng = new Random();
 		PrintWriter writer = response.getWriter();
 		
@@ -67,10 +69,15 @@ public class register extends HttpServlet {
 		int addressId = 0;
 		int paymentId = 0;
 		boolean userIdSuccess = false;
+		boolean registerUser = false;
+		boolean registerAddress = false;
+		boolean registerPayment = false;
+		boolean registerIntoBD = false;
+		
+		System.out.println("promotion value: " + promotion);
 		
 		if(password.equals(confirm)) {
 			try {
-//				writer.println("very new code");
 				Connection con = DatabaseConnection.initializeDatabase();
 				
 				if(email.length() > 0) {
@@ -115,22 +122,47 @@ public class register extends HttpServlet {
 					paymentId = userId;
 				} // if
 				
-				String userInfoQuery = "INSERT INTO `bookstore`.`user` (`userId`, `userFirstName`, `userLastName`, `userEmail`, `userPassword`, `userPromotion`, `userType`, `addressId`, `paymentId`)"
-						+ " VALUES ('"+ userId +"', '" + (firstName.length() > 0? firstName : "NULL") + "', '" + (lastName.length() > 0? lastName : "NULL") + "', '" + (email.length() > 0? email : "NULL") + "', '" + (password.length() > 0? password : "NULL") + "', '" + 1 + "', '" + 1 + "', '" + addressId + "', '" + paymentId + "');";
+				String userInfoQuery = "INSERT INTO `bookstore`.`user`"
+						+ " (`userId`, `userFirstName`, `userLastName`, `userEmail`, `userPassword`, `userPromotion`, `userType`, `userAddressId`, `userPaymentId`, `userActivated`)"
+						+ " VALUES ('"+ userId +"', '" + (firstName.length() > 0? firstName : "NULL") + "', '" + (lastName.length() > 0? lastName : "NULL") + "', '" + (email.length() > 0? email : "NULL") + "', '" + (password.length() > 0? password : "NULL") + "', '" + (promotion.length() < 1? "0":"1") + "', '" + 0 + "', '" + addressId + "', '" + paymentId + "', '" + 0 + "');";
 				PreparedStatement userInfoStatement = con.prepareStatement(userInfoQuery);
 				userInfoStatement.execute();
+				registerUser = true;
 				
-				String addressInfoQuery = "INSERT INTO `bookstore`.`address` (`addressId`, `addressStreet`, `addressCity`, `addressState`, `addressZipcode`, `addressUserId`) VALUES ('" + addressId + "', '" + (address.length() > 0? address:"NULL") + "', '" + (city.length() > 0? city:"NULL") + "', '" + (state.equalsIgnoreCase("choose...")? "NULL":state) + "', '" + (zip.length() > 0? zip:"NULL") + "', '" + userId + "');";
+				String addressInfoQuery = "INSERT INTO `bookstore`.`address`"
+						+ " (`addressId`, `addressStreet`, `addressCity`, `addressState`, `addressZipcode`, `addressUserId`)"
+						+ " VALUES ('" + addressId + "', '" + (address.length() > 0? address:"NULL") + "', '" + (city.length() > 0? city:"NULL") + "', '" + (state.equalsIgnoreCase("choose...")? "NULL":state) + "', '" + (zip.length() > 0? zip:"NULL") + "', '" + userId + "');";
 				PreparedStatement addressInfoStatement = con.prepareStatement(addressInfoQuery);
 				addressInfoStatement.execute();
+				registerAddress = true;
 				
-				String paymentInfoQuery = "INSERT INTO `bookstore`.`payment` (`paymentId`, `paymentCardType`, `paymentCardOwnerName`, `paymentCardNum`, `paymentCardExpirationDate`, `paymentCardSecurityCode`, `paymentUserId`) VALUES ('" + paymentId + "', '" + paymentMethod + "', '" + fullNameOnCard + "', '" + cardNum + "', '" + expiration + "', '" + cvv + "', '" + userId + "');";
+				String paymentInfoQuery = "INSERT INTO `bookstore`.`payment`"
+						+ " (`paymentId`, `paymentCardType`, `paymentCardOwnerName`, `paymentCardNum`, `paymentCardExpirationDate`, `paymentCardSecurityCode`, `paymentUserId`)"
+						+ " VALUES ('" + paymentId + "', '" + paymentMethod + "', '" + (fullNameOnCard.length() > 0? fullNameOnCard:"NULL") + "', '" + (cardNum.length() > 0? cardNum:"NULL") + "', '" + (expiration.length() > 0? expiration:"NULL") + "', '" + (cvv.length() > 0? cvv:"NULL") + "', '" + userId + "');";
 				PreparedStatement paymentInfoStatement = con.prepareStatement(paymentInfoQuery);
 				paymentInfoStatement.execute();
+				registerPayment = true;
 			} catch (Exception e) {
 				e.printStackTrace();
-			}
-		}
-	}
-
-}
+				
+				System.out.println("Registration failed");
+				request.setAttribute("registrationError", "Registration fail. Please try again later");
+				request.getRequestDispatcher("register.jsp").forward(request, response);
+				return;
+			} // try catch
+			registerIntoBD = true;
+		} else {
+			System.out.println("Password mismatch");
+			request.setAttribute("passwordError", "Password and confirmation password must match. Please try again.!\n");
+			request.getRequestDispatcher("register.jsp").forward(request, response);
+		} // if else
+		
+		request.setAttribute("doneRegistration", "Thank you for registering for IMA BookStore. Please check your email for confirmation email!\n");
+		request.getRequestDispatcher("register.jsp").forward(request, response);
+		
+		//sending registration email
+		if(registerIntoBD) {
+			registrationConfirmation.sendRegistrationConfirmationEmail(request);
+		} // if
+	} // doPost method
+} // register class

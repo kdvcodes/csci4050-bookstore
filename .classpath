@@ -16,5 +16,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="/Users/kdv/coding-tools/servlet-api.jar"/>
 	<classpathentry kind="lib" path="/Users/kdv/coding-tools/mysql-connector-java-8.0.20/mysql-connector-java-8.0.20.jar"/>
+	<classpathentry kind="lib" path="/Users/kdv/coding-tools/javax.mail.jar"/>
+	<classpathentry kind="lib" path="/Users/kdv/coding-tools/javax.activation-1.2.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

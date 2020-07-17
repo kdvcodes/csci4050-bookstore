@@ -100,8 +100,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-					<div class="registration-email-error">${emailError}</div>
-                    <form class="needs-validation" novalidate="" method="POST" action="register">
+                	<div class="error-message">${doneRegistration}</div>
+                	<div class="error-message">${passwordError}</div>
+					<div class="error-message">${emailError}</div>
+                    <form id="register" class="needs-validation" novalidate="" method="POST" action="register">
                     
                         <h3>Account Information</h3>
                         <div class="row">
@@ -131,7 +133,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="password">Confirm Password<span class="required">*</span></label>
+                            <label for="password">Confirm Password <span class="required">*</span></label>
                             <input type="password" class="form-control" name="confirm" id="passwordConfirmation">
                             <div class="invalid-feedback"> Please enter a valid password</div>
                         </div>
@@ -238,7 +240,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <label for="cc-expiration">Expiration</label>
+                                <label for="cc-expiration">Expiration (mm/yyyy)</label>
                                 <input type="text" class="form-control" id="cc-expiration" name="expiration" placeholder="" >
 
                             </div>
@@ -252,9 +254,9 @@
                        
                             
                        	<div>
-						  <input type="hidden" name="promotion" value="" />
-						  <input type="checkbox" name="promotion" checked="checked" />
-						  Subscribe to receive promotional emails!
+						  <input type="hidden" name="promotion" />
+						  <input type="checkbox" name="promotion" value="1"/>
+						   Subscribe to receive promotional emails!
 						</div>
 
                          

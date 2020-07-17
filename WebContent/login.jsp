@@ -104,7 +104,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-					<div class="registration-email-error">${emailError}</div>
+					<div class="error-message">${emailError}</div>
+					<div class="error-message">${passwordError}</div>
+					<div class="error-message">${activationError}</div>
                     <form class="needs-validation" method="post" action="login">
 
                         <div class="mb-3">
