@@ -64,4 +64,24 @@
     <servlet-name>editProfile</servlet-name>
     <url-pattern>/editProfile</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>accountActivation</display-name>
+    <servlet-name>accountActivation</servlet-name>
+    <servlet-class>controller.accountActivation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>accountActivation</servlet-name>
+    <url-pattern>/accountActivation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>forgotPassword</display-name>
+    <servlet-name>forgotPassword</servlet-name>
+    <servlet-class>controller.forgotPassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>forgotPassword</servlet-name>
+    <url-pattern>/forgotPassword</url-pattern>
+  </servlet-mapping>
 </web-app>

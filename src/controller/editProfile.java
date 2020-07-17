@@ -87,7 +87,7 @@ public class editProfile extends HttpServlet {
 					currentPassword += rs.getString("userPassword");
 				} // while
 			} catch(Exception e) {
-				System.out.println("Errror retrieving userId from editProfile");
+				System.out.println("Errror retrieving currentPassword from editProfile");
 				e.printStackTrace();
 			} // try catch
 			
@@ -121,7 +121,7 @@ public class editProfile extends HttpServlet {
 					currentFirstName += rs.getString("firstName");
 				} // while
 			} catch(Exception e) {
-				System.out.println("Errror retrieving firstName from editProfile");
+				System.out.println("Errror retrieving currentFirstName from editProfile");
 				e.printStackTrace();
 			} // try catch
 			
@@ -135,7 +135,7 @@ public class editProfile extends HttpServlet {
 					currentLastName += rs.getString("lastName");
 				} // while
 			} catch(Exception e) {
-				System.out.println("Errror retrieving lastName from editProfile");
+				System.out.println("Errror retrieving currentLastName from editProfile");
 				e.printStackTrace();
 			} // try catch
 			
@@ -223,19 +223,19 @@ public class editProfile extends HttpServlet {
 				e.printStackTrace();
 			} // try catch
 			
-			// getting paymentCardType from db
-			try {
-				String paymentCardNumberQuery = "select paymentCardNum from bookstore.payment where paymentId = '" + userId + "';";
-				PreparedStatement paymentCardNumberStatement = con.prepareStatement(paymentCardNumberQuery);
-				ResultSet rs = paymentCardNumberStatement.executeQuery();
-				
-				while(rs.next()) {
-					currentCardNumber += rs.getString("paymentCardNum");
-				} // while
-			} catch(Exception e) {
-				System.out.println("Errror retrieving currentCardNumber from editProfile");
-				e.printStackTrace();
-			} // try catch
+//			// getting paymentCardType from db
+//			try {
+//				String paymentCardNumberQuery = "select paymentCardNum from bookstore.payment where paymentId = '" + userId + "';";
+//				PreparedStatement paymentCardNumberStatement = con.prepareStatement(paymentCardNumberQuery);
+//				ResultSet rs = paymentCardNumberStatement.executeQuery();
+//				
+//				while(rs.next()) {
+//					currentCardNumber += rs.getString("paymentCardNum");
+//				} // while
+//			} catch(Exception e) {
+//				System.out.println("Errror retrieving currentCardNumber from editProfile");
+//				e.printStackTrace();
+//			} // try catch
 			
 			// getting paymentCardType from db
 			try {
