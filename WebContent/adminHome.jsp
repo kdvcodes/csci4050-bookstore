@@ -20,6 +20,7 @@
   	<title>IMA Bookstore</title>
 </head>
 <body>
+<jsp:include page="/adminAction"></jsp:include>
 <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
@@ -74,9 +75,10 @@
 			      <div class="dropdown-menu dropdown-menu-right">
 			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
+			        <a class="dropdown-item" href="message.jsp">Message</a>
 			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
 			        <a class="dropdown-item" href="adminHome.jsp">Admin</a>
-			        
+			        <a class="dropdown-item" href="logout">Log Out</a>
 			      </div>
 			    </div>
             </li>

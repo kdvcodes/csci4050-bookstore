@@ -22,7 +22,7 @@ public class registrationConfirmation {
 			Session sess = Session.getInstance(props,auth);
 			MimeMessage msg=new MimeMessage(sess);
 			try {
-				msg.setContent("Thank you for registering please click to activate <a href='localhost:'>click</a>","text/html");
+				msg.setContent("Thank you for registering please click to activate <a href='127.0.0.1:8080/csci4050-bookstore/login.jsp'>click</a>","text/html");
 				msg.setSubject("Book store account");
 				
 				System.out.println("Email to send to:" + request.getParameter("email"));

@@ -74,9 +74,10 @@
 			      <div class="dropdown-menu dropdown-menu-right">
 			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
+			        <a class="dropdown-item" href="message.jsp">Message</a>
 			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
 			        <a class="dropdown-item" href="adminHome.jsp">Admin</a>
-			        
+			        <a class="dropdown-item" href="logout">Log Out</a>
 			      </div>
 			    </div>
             </li>
@@ -94,7 +95,6 @@
 	});
 </script>
 
-
  <div class="px-4 px-lg-0">
     <!-- For demo purpose -->
     <div class="container text-white py-5 text-center">
@@ -105,13 +105,37 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-					<div class="messages"></div>
-                   
+					<div class="messages">
+                   	
+                   	<%
+						String userName = null;
+						Cookie[] cookies = request.getCookies();
+						if(cookies !=null){
+							for(Cookie cookie : cookies){
+								if(cookie.getName().equals("user")) userName = cookie.getValue();
+							} // for
+						} // if
+						System.out.println("MESSAGE BOARD:: Current User Name; " + userName);
+						if(userName == null) {
+// 							response.sendRedirect("login.jsp");
+							out.println("You're not logged in.");
+						} else {
+							out.println("Logged in as " + userName);
+						}
+					%>
+					<div class="error-message">${userTypeError}</div>
+                   	
+                   	</div>
            		</div>
+           		<button id="homeBtn" class="btn btn-primary btn-lg btn-block">Home</button>
            	</div>
        </div>
    </div>
 </div>
-
+<script type="text/javascript">
+    document.getElementById("homeBtn").onclick = function () {
+        location.href = "index.jsp";
+    };
+</script>
 </body>
 </html>

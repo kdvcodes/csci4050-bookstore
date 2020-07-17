@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
+<%@ page import="javax.servlet.http.Cookie" %>
 <html lang="en">
 <head>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -20,6 +20,16 @@
   	</style>
 </head>
 <body>
+<%
+// String userName = null;
+// Cookie[] cookies = request.getCookies();
+// if(cookies !=null){
+// for(Cookie cookie : cookies){
+// 	if(cookie.getName().equals("user")) userName = cookie.getValue();
+// }
+// }
+// if(userName == null) response.sendRedirect("login.jsp");
+%>
 <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
@@ -74,9 +84,10 @@
 			      <div class="dropdown-menu dropdown-menu-right">
 			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
+			        <a class="dropdown-item" href="message.jsp">Message</a>
 			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
 			        <a class="dropdown-item" href="adminHome.jsp">Admin</a>
-			        
+			        <a class="dropdown-item" href="logout">Log Out</a>
 			      </div>
 			    </div>
             </li>
@@ -108,7 +119,7 @@
 					<div class="error-message">${emailError}</div>
 					<div class="error-message">${passwordError}</div>
 					<div class="error-message">${activationError}</div>
-                    <form class="needs-validation" method="post" action="login">
+                    <form id="login" class="needs-validation" method="post" action="login">
 
                         <div class="mb-3">
                             <label for="email">Email </label>

@@ -74,9 +74,10 @@
 			      <div class="dropdown-menu dropdown-menu-right">
 			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
+			        <a class="dropdown-item" href="message.jsp">Message</a>
 			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
 			        <a class="dropdown-item" href="adminHome.jsp">Admin</a>
-			        
+			        <a class="dropdown-item" href="logout">Log Out</a>
 			      </div>
 			    </div>
             </li>
@@ -251,7 +252,6 @@
                                 <input type="text" class="form-control" id="cc-cvv" name="cvv" placeholder="" >
 
                             </div>
-                            
                         </div>
                        
                             
@@ -260,9 +260,10 @@
 						  <input type="checkbox" name="promotion" value="1"/>
 						   Subscribe to receive promotional emails!
 						</div>
-
-                         
-                        
+						
+						<br>
+						<span class="required">*</span> Required Fields
+						
                         <hr class="mb-4">
                         <button class="btn btn-primary btn-lg btn-block" type="submit" form="register">Register</button>
                         <hr class="mb-4">

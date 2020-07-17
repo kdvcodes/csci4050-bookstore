@@ -1,11 +1,14 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,6 +44,8 @@ public class login extends HttpServlet {
 		String loginEmail = request.getParameter("loginEmail");
 		String loginPassword  = request.getParameter("loginPassword");
 		boolean userActivated = false;
+		boolean emailMatch = false;
+		boolean passwordMatch = false;
 		
 		try {
 			Connection con = DatabaseConnection.initializeDatabase();
@@ -53,11 +58,12 @@ public class login extends HttpServlet {
 				ResultSet emailRS = loginEmailCheckStatement.executeQuery();
 				
 				while(emailRS.next()) {
-					count += Integer.parseInt(emailRS.getString("count(userEmail"));
+					count += Integer.parseInt(emailRS.getString("count(userEmail)"));
 				} // while
 				
 				// check password
 				if(count == 1) {
+					emailMatch = true;
 					String realPassword = "";
 					String loginPasswordCheckQuery = "select userPassword from bookstore.user where userEmail = \"" + loginEmail + "\";";
 					PreparedStatement loginPasswordCheckStatement = con.prepareStatement(loginPasswordCheckQuery);
@@ -69,18 +75,18 @@ public class login extends HttpServlet {
 					
 					// check activated
 					if(realPassword.equals(loginPassword)) {
+						passwordMatch = true;
 						int activatedValue = 0;
 						String loginUserActivatedCheckQuery = "select userActivated from bookstore.user where userEmail = \"" + loginEmail + "\";";
 						PreparedStatement loginUserActivatedCheckStatement = con.prepareStatement(loginUserActivatedCheckQuery);
 						ResultSet activatedRS = loginUserActivatedCheckStatement.executeQuery();
 						
 						while(activatedRS.next()) {
-							activatedValue += Integer.parseInt("userActivated");
+							activatedValue += Integer.parseInt(activatedRS.getString("userActivated"));
 						} // while
 						
 						if(activatedValue == 1) {
 							userActivated = true;
-							loginUser();
 						} else {
 							// error with activation code in db being 0
 							request.setAttribute("activationError", "Account not activated. Please activate your account.");
@@ -102,12 +108,22 @@ public class login extends HttpServlet {
 				}
 			} // if
 			
+			// create user session
+			if(emailMatch && passwordMatch) {
+				Cookie loginCookie = new Cookie("user", loginEmail);
+				loginCookie.setMaxAge(60 * 60 * 24);
+				response.addCookie(loginCookie);
+				response.sendRedirect("message.jsp");
+			} else {
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("login.jsp");
+				PrintWriter out= response.getWriter();
+				out.println("Error while creating your browsing session. Please try to log in again.");
+				rd.include(request, response);
+			} // if else
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	} // doPost
-	
-	// create user session
-	public void loginUser() {}
 
 }

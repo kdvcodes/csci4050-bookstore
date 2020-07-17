@@ -68,8 +68,10 @@
 			      <div class="dropdown-menu dropdown-menu-right">
 			        <a class="dropdown-item" href="login.jsp">Sign In</a>
 			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
+			        <a class="dropdown-item" href="message.jsp">Message</a>
 			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
 			        <a class="dropdown-item" href="adminHome.jsp">Admin</a>
+			        <a class="dropdown-item" href="logout">Log Out</a>
 			      </div>
 			    </div>
             </li>
