@@ -87,7 +87,7 @@ public class editProfile extends HttpServlet {
 					currentPassword += rs.getString("userPassword");
 				} // while
 			} catch(Exception e) {
-				System.out.println("Errror retrieving userId from editProfile");
+				System.out.println("Errror retrieving currentPassword from editProfile");
 				e.printStackTrace();
 			} // try catch
 			
@@ -113,29 +113,29 @@ public class editProfile extends HttpServlet {
 			
 			// getting currentFirstName from db
 			try {
-				String currentFirstNameQuery = "select firstName from bookstore.user where userEmail = '" + userEmail + "';";
+				String currentFirstNameQuery = "select userFirstName from bookstore.user where userEmail = '" + userEmail + "';";
 				PreparedStatement currentFirstNameStatement = con.prepareStatement(currentFirstNameQuery);
 				ResultSet rs = currentFirstNameStatement.executeQuery();
 				
 				while(rs.next()) {
-					currentFirstName += rs.getString("firstName");
+					currentFirstName += rs.getString("userFirstName");
 				} // while
 			} catch(Exception e) {
-				System.out.println("Errror retrieving firstName from editProfile");
+				System.out.println("Errror retrieving currentFirstName from editProfile");
 				e.printStackTrace();
 			} // try catch
 			
 			// getting currentLastName from db
 			try {
-				String currentLastNameQuery = "select lastName from bookstore.user where userEmail = '" + userEmail + "';";
+				String currentLastNameQuery = "select userLastName from bookstore.user where userEmail = '" + userEmail + "';";
 				PreparedStatement currentLastNameStatement = con.prepareStatement(currentLastNameQuery);
 				ResultSet rs = currentLastNameStatement.executeQuery();
 				
 				while(rs.next()) {
-					currentLastName += rs.getString("lastName");
+					currentLastName += rs.getString("userLastName");
 				} // while
 			} catch(Exception e) {
-				System.out.println("Errror retrieving lastName from editProfile");
+				System.out.println("Errror retrieving currentLastName from editProfile");
 				e.printStackTrace();
 			} // try catch
 			
@@ -223,19 +223,19 @@ public class editProfile extends HttpServlet {
 				e.printStackTrace();
 			} // try catch
 			
-			// getting paymentCardType from db
-			try {
-				String paymentCardNumberQuery = "select paymentCardNum from bookstore.payment where paymentId = '" + userId + "';";
-				PreparedStatement paymentCardNumberStatement = con.prepareStatement(paymentCardNumberQuery);
-				ResultSet rs = paymentCardNumberStatement.executeQuery();
-				
-				while(rs.next()) {
-					currentCardNumber += rs.getString("paymentCardNum");
-				} // while
-			} catch(Exception e) {
-				System.out.println("Errror retrieving currentCardNumber from editProfile");
-				e.printStackTrace();
-			} // try catch
+//			// getting paymentCardType from db
+//			try {
+//				String paymentCardNumberQuery = "select paymentCardNum from bookstore.payment where paymentId = '" + userId + "';";
+//				PreparedStatement paymentCardNumberStatement = con.prepareStatement(paymentCardNumberQuery);
+//				ResultSet rs = paymentCardNumberStatement.executeQuery();
+//				
+//				while(rs.next()) {
+//					currentCardNumber += rs.getString("paymentCardNum");
+//				} // while
+//			} catch(Exception e) {
+//				System.out.println("Errror retrieving currentCardNumber from editProfile");
+//				e.printStackTrace();
+//			} // try catch
 			
 			// getting paymentCardType from db
 			try {

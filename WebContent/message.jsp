@@ -115,7 +115,7 @@
 								if(cookie.getName().equals("user")) userName = cookie.getValue();
 							} // for
 						} // if
-						System.out.println("MESSAGE BOARD:: Current User Name; " + userName);
+						System.out.println("MESSAGE BOARD:: Current User Name: " + userName);
 						if(userName == null) {
 // 							response.sendRedirect("login.jsp");
 							out.println("You're not logged in.");
@@ -124,6 +124,9 @@
 						}
 					%>
 					<div class="error-message">${userTypeError}</div>
+					<div class="message">${activationMessage}</div>
+					<div class="message">${passwordRecoveryMessage}</div>
+					<div class="message">${passwordRequest}</div>
                    	
                    	</div>
            		</div>

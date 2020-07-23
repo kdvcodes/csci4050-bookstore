@@ -105,9 +105,10 @@
                   <h3><i class="fa fa-lock fa-4x"></i></h3>
                   <h2 class="text-center">Forgot Password?</h2>
                   <p>You can reset your password here.</p>
+                  <div class="error-message">${emailError}</div>
                   <div class="panel-body">
     
-                    <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                    <form id="register-form" role="form" autocomplete="off" class="form" method="post" action="forgotPassword">
     
                       <div class="form-group">
                         <div class="input-group">

@@ -20,9 +20,7 @@
   	</style>
 </head>
 <body>
-<%
-
-%>
+<jsp:include page="/setNewPassword"></jsp:include>
 <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
@@ -109,16 +107,16 @@
         <div class="container col-md-4">
             <div class="row">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-                   	<form id="newPass" class="needs-validation" method="post" action="newPass">
-
+                   	<form id="newPass" class="needs-validation" method="post" action="setNewPassword">
+						<div class="message">${passwordChangeAccountMessage}</div>
                         <div class="mb-3">
-                            <label for="email">New Password </label>
-                            <input type="email" class="form-control" id="newPassword" name="newPassword">
+                            <label for="newPassword">New Password </label>
+                            <input type="password" class="form-control" id="newPassword" name="newPassword">
                             
                         </div>
 
                         <div class="mb-3">
-                            <label for="password">Confirm New Password </label>
+                            <label for="newPasswordConfirmation">Confirm New Password </label>
                             <input type="password" class="form-control" name="newPasswordConfirmation" id="newPasswordConfirmation">
                         
                         </div>
