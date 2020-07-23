@@ -126,7 +126,7 @@
                             <tr>
                                 <th scope="row" class="border-0">
                                     <div class="p-2">
-                                        <img src="images/books/01.jpeg" alt="hello" width="70" class="img-fluid rounded shadow-sm">
+                                        <img src="images/books/0439708184.jpg" alt="hello" width="70" class="img-fluid rounded shadow-sm">
                                         <div class="ml-3 d-inline-block align-middle">
                                             <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Harry Potter and the Sorcerer's Stone</a></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
                                         </div>
@@ -145,7 +145,7 @@
                             <tr>
                                 <th scope="row">
                                     <div class="p-2">
-                                        <img src="images/books/02.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                        <img src="images/books/0439064872.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
                                         <div class="ml-3 d-inline-block align-middle">
                                             <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Harry Potter and the Chamber of Secrets</a></h5><span class="text-muted font-weight-normal font-italic"></span>
                                         </div>
@@ -165,7 +165,7 @@
                             <tr>
                                 <th scope="row">
                                     <div class="p-2">
-                                        <img src="images/books/03.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                        <img src="images/books/0439136369.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
                                         <div class="ml-3 d-inline-block align-middle">
                                             <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Harry Potter and the Prisoner of Azkaban</a></h5><span class="text-muted font-weight-normal font-italic"></span>
                                         </div>
