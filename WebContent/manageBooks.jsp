@@ -100,6 +100,23 @@
     <!-- edit form column -->
     <div class="col-md-9 personal-info">
         <form id="manage" class="form-horizontal" role="form" method="post" action="manage">
+        	<div class="form-group">
+                <label class="col-lg-3 control-label">Cover</label>
+                <div class="col-lg-8">
+                    <input type="file" id="cover_picture" name="cover_picture" accept="image"><br>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-md-3 control-label">Category</label>
+                <div class="col-md-8">
+                    <select id="cars" name="cars">
+					  <option value="volvo">Fiction</option>
+					  <option value="saab">Non-Fiction</option>
+					</select>
+                </div>
+            </div>
+            
             <div class="form-group">
                 <label class="col-lg-3 control-label">ISBN</label>
                 <div class="col-lg-8">
@@ -112,6 +129,7 @@
                     <input class="form-control" type="text" name="title">
                 </div>
             </div>
+            
 
             <div class="form-group">
                 <label class="col-lg-3 control-label">Author</label>
@@ -120,12 +138,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-md-3 control-label">Category</label>
-                <div class="col-md-8">
-                    <input class="form-control" type="password" name="category">
-                </div>
-            </div>
+            
             <div class="form-group">
                 <label class="col-md-3 control-label">Quantity in Stock</label>
                 <div class="col-md-8">
@@ -154,7 +167,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label"></label>
                 <div class="col-md-8">
-                    <input type="button" class="btn btn-primary" value="Add Book" name="addBook">
+                    <input type="button" class="btn btn-primary" value="Add Book" name="addBook" form="manage">
                 </div>
             </div>
 
