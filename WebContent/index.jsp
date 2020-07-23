@@ -14,6 +14,7 @@
   	<title>IMA Bookstore</title>
 </head>
 <body>
+<jsp:include page="/indexPageBooks"></jsp:include>
   <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">

@@ -94,4 +94,14 @@
     <servlet-name>setNewPassword</servlet-name>
     <url-pattern>/setNewPassword</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>indexPageBooks</display-name>
+    <servlet-name>indexPageBooks</servlet-name>
+    <servlet-class>controller.indexPageBooks</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>indexPageBooks</servlet-name>
+    <url-pattern>/indexPageBooks</url-pattern>
+  </servlet-mapping>
 </web-app>
