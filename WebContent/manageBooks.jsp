@@ -25,46 +25,11 @@
     	<div class="navbar-header">
 	  		<a  class="navbar-brand" href="index.jsp">IMA Bookstore</a>
 	  	</div>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a href="index.jsp" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-               <a href="books.jsp" class="nav-link">Shop</a>
-            </li>
-            <li class="nav-item">
-                <a href="shoppingCart.jsp" class="nav-link">Cart</a>
-            </li>
-        </ul>
+      
     </div>
     
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-            	<div class="container">
-				    <form class="form-inline" id="search" method="post" action="search">
-				        <div class="input-group" id="dropdown">
-				            
-				            <div class="btn-group">
-							    <button type="button" class="form-control btn btn-default dropdown-toggle filterToggle" data-toggle="dropdown">
-							        Filter By <span class="caret"></span>
-							    </button>
-							    <div class="dropdown-menu" id="bookFilter" aria-labelledby="dropdownMenuButton">
-					                <a class="dropdown-item" href="#">Title</a>
-					                <a class="dropdown-item" href="#">Author</a>
-					                <a class="dropdown-item" href="#">ISBN</a>
-					            </div>
-							</div>
-				        </div>
-				        <div class="input-group" id="search">
-				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
-				            <div class="input-group-btn">
-				                <button class="btn btn-primary" type="submit" form="search">Submit</button>
-				            </div>
-				        </div>
-				    </form>
-				</div>
-            </li>
             
             <li class="nav-item">
                 <div class="dropdown">
@@ -72,11 +37,6 @@
 			        Account
 			      </button>
 			      <div class="dropdown-menu dropdown-menu-right">
-			        <a class="dropdown-item" href="login.jsp">Sign In</a>
-			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
-			        <a class="dropdown-item" href="message.jsp">Message</a>
-			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
-			        <a class="dropdown-item" href="adminHome.jsp">Admin</a>
 			        <a class="dropdown-item" href="logout">Log Out</a>
 			      </div>
 			    </div>
@@ -92,90 +52,107 @@
 		});
 	});
 </script>
-<div class="container-fluid" id="edit">
-    <div class="py-5">
-        <h1>Manage Books</h1>
+
+<div class="px-4 px-lg-0">
+    <!-- For demo purpose -->
+    <div class="container text-white py-5 text-center">
+        <h1 class="display-4">Add Book</h1>
     </div>
 
+
+	
+	<div class="pb-5">
+        <div class="container col-lg-6">
+            <div class="row">
     <!-- edit form column -->
-    <div class="col-md-9 personal-info">
-        <form id="manage" class="form-horizontal" role="form" method="post" action="manage">
-        	<div class="form-group">
-                <label class="col-lg-3 control-label">Cover</label>
-                <div class="col-lg-8">
-                    <input type="file" id="cover_picture" name="cover_picture" accept="image"><br>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label class="col-md-3 control-label">Category</label>
-                <div class="col-md-8">
-                    <select id="cars" name="cars">
-					  <option value="volvo">Fiction</option>
-					  <option value="saab">Non-Fiction</option>
-					</select>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label class="col-lg-3 control-label">ISBN</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text" name="isbn">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Title</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text" name="title">
-                </div>
-            </div>
-            
-
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Author</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text" name="author">
-                </div>
-            </div>
-
-            
-            <div class="form-group">
-                <label class="col-md-3 control-label">Quantity in Stock</label>
-                <div class="col-md-8">
-                    <input class="form-control" type="password" name="quantity">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Price</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text" name="price">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Publisher</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text" name="pub">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Publication Year</label>
-                <div class="col-lg-8">
-                    <input class="form-control" type="text" name="year">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-md-3 control-label"></label>
-                <div class="col-md-8">
-                    <input type="button" class="btn btn-primary" value="Add Book" name="addBook" form="manage">
-                </div>
-            </div>
-
-        </form>
-
-
-
-    </div>
+			    <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+			        <form id="manage" class="form-horizontal" role="form" method="post" action="manage">
+			        	<div class="form-group">
+			                <label class="col-lg-3 control-label">Cover</label>
+			                <div class="col-lg-8">
+			                    <input type="file" id="cover_picture" name="cover_picture" accept="image"><br>
+			                </div>
+			            </div>
+			            
+			            <div class="form-group">
+			                <label class="col-md-3 control-label">Genre</label>
+			                <div class="col-md-8">
+			                    <select id="cars" name="cars">
+								  <option value="volvo">Fiction</option>
+								  <option value="saab">Non-Fiction</option>
+								</select>
+			                </div>
+			            </div>
+			            
+			            <div class="form-group">
+			                <label class="col-lg-3 control-label">ISBN</label>
+			                <div class="col-lg-12">
+			                    <input class="form-control" type="text" name="isbn">
+			                </div>
+			            </div>
+			            <div class="form-group">
+			                <label class="col-lg-3 control-label">Title</label>
+			                <div class="col-lg-12">
+			                    <input class="form-control" type="text" name="title">
+			                </div>
+			            </div>
+			            
+			
+			            <div class="form-group">
+			                <label class="col-lg-3 control-label">Author</label>
+			                <div class="col-lg-12">
+			                    <input class="form-control" type="text" name="author">
+			                </div>
+			            </div>
+			            
+			            <div class="form-group">
+			                <label class="col-lg-3 control-label">Publication Year</label>
+			                <div class="col-lg-12">
+			                    <input class="form-control" type="text" name="year">
+			                </div>
+			            </div>
+			            
+			             <div class="form-group">
+			                <label class="col-lg-3 control-label">Price</label>
+			                <div class="col-lg-12">
+			                    <input class="form-control" type="text" name="price">
+			                </div>
+			            </div>
+			
+			            
+			            <div class="form-group">
+			                <label class="col-md-3 control-label">Quantity in Stock</label>
+			                <div class="col-md-12">
+			                    <input class="form-control" type="password" name="quantity">
+			                </div>
+			            </div>
+			           
+			            <div class="form-group">
+			                <label class="col-lg-3 control-label">Description</label>
+			                <div class="col-lg-12">
+			                    <textarea id="w3review" name="description" rows="4" cols="50">
+						
+								 </textarea>
+			                </div>
+			            </div>
+			            
+			
+			            <div class="form-group">
+			                <label class="col-md-3 control-label"></label>
+			                <div class="col-md-12">
+			                    <input type="button" class="btn btn-primary" value="Add Book" name="addBook" form="manage">
+			                </div>
+			            </div>
+			
+			        </form>
+			
+			
+			
+			    </div>
+			 </div>
+		</div>
+	</div>
+			    
 </div>
 
 </body>
