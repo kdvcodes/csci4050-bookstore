@@ -104,4 +104,24 @@
     <servlet-name>indexPageBooks</servlet-name>
     <url-pattern>/indexPageBooks</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>getBookInfo</display-name>
+    <servlet-name>getBookInfo</servlet-name>
+    <servlet-class>controller.getBookInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getBookInfo</servlet-name>
+    <url-pattern>/getBookInfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>bookInfo</display-name>
+    <servlet-name>bookInfo</servlet-name>
+    <servlet-class>controller.bookInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookInfo</servlet-name>
+    <url-pattern>/bookInfo</url-pattern>
+  </servlet-mapping>
 </web-app>

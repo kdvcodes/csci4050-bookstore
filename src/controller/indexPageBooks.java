@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -28,22 +30,39 @@ public class indexPageBooks extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String book1Title, book2Title, book3Title, book4Title;
-		String book1Price, book2Price, book3Price, book4Price;
-		String book1Cover, book2Cover, book3Cover, book4Cover;
+		ArrayList<String> bookNameList = new ArrayList<String>();
+		ArrayList<String> bookPriceList = new ArrayList<String>();
+		ArrayList<String> bookCoverList = new ArrayList<String>();
 		String bookSource = "images/books/";
 		String book1Id = "439708184";
-		String book2Id = "2";
-		String book3Id = "3";
-		String book4Id = "4";
-		ArrayList<String> bookId = new ArrayList<String>();
-		bookId.add("439708184");
+		ArrayList<String> bookIdList = new ArrayList<String>();
+		bookIdList.add("439708184");
 		
 		try {
 			Connection con = DatabaseConnection.initializeDatabase();
 			
-			for(int i = 0; i < bookId.size(); i++) {
+			for(int i = 0; i < bookIdList.size(); i++) {
+				String bookName = "";
+				String bookPrice = "";
+				String bookNameQuery = "select bookName from bookstore.book where bookISBN='" + bookIdList.get(i) + "';";
+				String bookPriceQuery = "select bookPrice from bookstore.book where bookISBN='" + bookIdList.get(i) + "';";
+				String bookCoveryQuery = "";
+				PreparedStatement bookNameStatement = con.prepareStatement(bookNameQuery);
+				ResultSet bookNameRS = bookNameStatement.executeQuery();
 				
+				while(bookNameRS.next()) {
+					bookName += bookNameRS.getString("bookName");
+				} // while
+				
+				PreparedStatement bookpriceStatement = con.prepareStatement(bookPriceQuery);
+				ResultSet bookPriceRS = bookpriceStatement.executeQuery();
+				
+				while(bookPriceRS.next()) {
+					bookPrice += bookPriceRS.getString("bookPrice");
+				}
+				
+				request.setAttribute("bookName", bookNameList.get(i));
+				request.setAttribute("bookPrice", bookPriceList.get(i));
 			} // for
 		} catch(Exception e) {
 			e.printStackTrace();
