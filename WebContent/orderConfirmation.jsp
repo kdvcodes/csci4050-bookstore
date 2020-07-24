@@ -59,7 +59,7 @@
 				        <div class="input-group" id="search">
 				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
 				            <div class="input-group-btn">
-				                <button class="btn btn-primary" type="submit" form="search">Submit</button>
+				                <button class="btn btn-primary" type="submit" form="search">Search</button>
 				            </div>
 				        </div>
 				    </form>
@@ -73,10 +73,9 @@
 			      </button>
 			      <div class="dropdown-menu dropdown-menu-right">
 			        <a class="dropdown-item" href="login.jsp">Sign In</a>
-			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
+			        <a class="dropdown-item" href="register.jsp">Register</a>
 			        <a class="dropdown-item" href="message.jsp">Message</a>
 			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
-			        <a class="dropdown-item" href="adminHome.jsp">Admin</a>
 			        <a class="dropdown-item" href="logout">Log Out</a>
 			      </div>
 			    </div>

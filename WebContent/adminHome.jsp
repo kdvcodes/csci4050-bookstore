@@ -17,7 +17,7 @@
   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   	<link rel="stylesheet" href="style.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  	<title>Admin</title>
+  	<title>Admin Home</title>
 </head>
 <body>
 <jsp:include page="/adminAction"></jsp:include>
@@ -26,46 +26,11 @@
     	<div class="navbar-header">
 	  		<a  class="navbar-brand" href="index.jsp">IMA Bookstore</a>
 	  	</div>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a href="index.jsp" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-               <a href="books.jsp" class="nav-link">Shop</a>
-            </li>
-            <li class="nav-item">
-                <a href="shoppingCart.jsp" class="nav-link">Cart</a>
-            </li>
-        </ul>
+      
     </div>
     
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-            	<div class="container">
-				    <form class="form-inline" id="search" method="post" action="search">
-				        <div class="input-group" id="dropdown">
-				            
-				            <div class="btn-group">
-							    <button type="button" class="form-control btn btn-default dropdown-toggle filterToggle" data-toggle="dropdown">
-							        Filter By <span class="caret"></span>
-							    </button>
-							    <div class="dropdown-menu" id="bookFilter" aria-labelledby="dropdownMenuButton">
-					                <a class="dropdown-item" href="#">Title</a>
-					                <a class="dropdown-item" href="#">Author</a>
-					                <a class="dropdown-item" href="#">ISBN</a>
-					            </div>
-							</div>
-				        </div>
-				        <div class="input-group" id="search">
-				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
-				            <div class="input-group-btn">
-				                <button class="btn btn-primary" type="submit" form="search">Submit</button>
-				            </div>
-				        </div>
-				    </form>
-				</div>
-            </li>
             
             <li class="nav-item">
                 <div class="dropdown">
@@ -73,11 +38,6 @@
 			        Account
 			      </button>
 			      <div class="dropdown-menu dropdown-menu-right">
-			        <a class="dropdown-item" href="login.jsp">Sign In</a>
-			        <a class="dropdown-item" href="register.jsp">Don't have an account? Sign up</a>
-			        <a class="dropdown-item" href="message.jsp">Message</a>
-			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
-			        <a class="dropdown-item" href="adminHome.jsp">Admin</a>
 			        <a class="dropdown-item" href="logout">Log Out</a>
 			      </div>
 			    </div>
@@ -94,30 +54,24 @@
 	});
 </script>
 <section class="static about-sec">
-    <div class="container" id="admin">
-        <h1>Admin Dashboard</h1>
-        <p>Welcome Admin! You can manage book inventory, manage users and create promo code here.</p>
-        <div class="form">
-            <form>
-                <div class="row">
-
-                    <div class="col-lg-8 col-md-12">
-                        <button type="button" class="btn btn-info">Update User</button>
-
-                    </div>
-
-                    <div class="col-lg-8 col-md-12">
-                        <button type="button" class="btn btn-info">Update Book Inventory</button>
-
-                    </div>
-                    <div class="col-lg-8 col-md-12">
-                        <button type="button" class="btn btn-info">Create Promotion</button>
-
-                    </div>
+	<div class="px-4 px-lg-0">
+    <!-- For demo purpose -->
+	    <div class="container text-white py-5 text-center" id="admin">
+	        <h1>Admin Dashboard</h1>
+	        <p>Welcome Admin! Click the icon below to start adding new books to the inventory</p>
+	    </div>
+	    
+	    <div class="pb-5">
+        	<div class="container col-md-2">
+            	<div class="row">
+                	<div class="col-lg-12 p-5">
+                		<a href="manageBooks.jsp"><img src="images/study.png" alt="Add Book" style="width:125px;height:125px;"></a>
+                	</div>
                 </div>
-            </form>
-        </div>
-    </div>
+             </div>
+        </div>   		
+                
+	 </div>
 </section>
 
 </body>
