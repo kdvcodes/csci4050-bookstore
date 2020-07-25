@@ -104,30 +104,29 @@
                     <div class="row">
                         <div class="col-md-4 order-md-2 mb-4">
                             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="text-muted">Your cart</span>
+                                <span class="text-muted">Order Summary</span>
                                 <span class="badge badge-secondary badge-pill">3</span>
                             </h4>
+                            
+                          
                             <ul class="list-group mb-3 sticky-top">
                                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
-                                        <h6 class="my-0">Product name</h6>
-                                        <small class="text-muted">Brief description</small>
+                                        <h6 class="my-0">Order Subtotal</h6>
                                     </div>
-                                    <span class="text-muted">$12</span>
+                                    <span class="text-muted">$390.00</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
-                                        <h6 class="my-0">Second product</h6>
-                                        <small class="text-muted">Brief description</small>
+                                        <h6 class="my-0">Shipping and handling</h6>
                                     </div>
-                                    <span class="text-muted">$8</span>
+                                    <span class="text-muted">$10.00</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
-                                        <h6 class="my-0">Third item</h6>
-                                        <small class="text-muted">Brief description</small>
+                                        <h6 class="my-0">Tax</h6>
                                     </div>
-                                    <span class="text-muted">$5</span>
+                                    <span class="text-muted">$0.00</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between bg-light">
                                     <div class="text-success">
@@ -196,8 +195,11 @@
                                 </div>
                                 <hr class="mb-4">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="same-address" id="same-address">
-                                    <label class="custom-control-label" for="same-address">Use saved address for shipping and billing</label>
+                                	<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+										<input type="checkbox" class="custom-control-input" name="same-address" id="same-address">
+                                    	<label class="custom-control-label" for="same-address">Use saved address for shipping and billing</label>
+									</a>
+                                    
                                 </div>
                                 <hr class="mb-4">
                                 <h4 class="mb-3">Payment</h4>

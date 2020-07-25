@@ -18,6 +18,11 @@
   	<link rel="stylesheet" href="style.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   	<title>Cart</title>
+  	<style type="text/css">
+  		input[type=number]{
+		    width: 60px;
+		} 
+  	</style>
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-dark">
@@ -122,6 +127,7 @@
                             </tr>
                             </thead>
                             <tbody>
+                            
                             <tr>
 	                            <form method="post" name="book" action="">
 	                             <th scope="row" class="border-0">
@@ -135,9 +141,9 @@
 	                                <td class="border-0 align-middle"><strong>$49.00</strong></td>
 	                                <td class="border-0 align-middle">
 	                                    <strong>
-	                                        <div class="def-number-input number-input safari_only mb-0 w-100">
+	                                        <div class="def-number-input number-input safari_only mb-0 w-10 ">
 	                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-	                                            <button class="quantity" type="submit" form="">Update</button>
+	                                            <button class="quantity" type="submit" form="book">Update</button>
 	                                            
 	                                        </div>
 	                                    </strong>
@@ -146,6 +152,7 @@
 	                            </form>
                                
                             </tr>
+                            
                             <tr>
                                 <th scope="row">
                                     <div class="p-2">
@@ -194,7 +201,7 @@
             </div>
 
             <div class="row py-5 p-4 bg-white rounded shadow-sm">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
                     <div class="p-4">
                         <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
@@ -205,7 +212,7 @@
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                                 <h5 class="font-weight-bold">$400.00</h5>
                             </li>
-                        </ul><a href="checkout.jsp" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+                        </ul><a href="checkout.jsp" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
                     </div>
                 </div>
             </div>
