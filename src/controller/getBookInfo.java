@@ -40,12 +40,14 @@ public class getBookInfo extends HttpServlet {
 		String bookName = "";
 		String bookPrice = "";
 		String bookSource = "images/books/";
+		String bookCover = "";
 		
 		try {
 			Connection con = DatabaseConnection.initializeDatabase();
 			
 			String bookNameQuery = "select bookName from bookstore.book where bookISBN='" + bookISBN + "';";
 			String bookPriceQuery = "select bookPrice from bookstore.book where bookISBN='" + bookISBN + "';";
+			String bookCoverQuery = "select bookCoverImg from bookstore.book where bookISBN ='" + bookISBN + "';";
 			PreparedStatement bookNameStatement = con.prepareStatement(bookNameQuery);
 			ResultSet bookNameRS = bookNameStatement.executeQuery();
 			
@@ -60,14 +62,23 @@ public class getBookInfo extends HttpServlet {
 				bookPrice += bookPriceRS.getString("bookPrice");
 			} // while
 			
+			PreparedStatement bookCoverStatement = con.prepareStatement(bookCoverQuery);
+			ResultSet bookCoverRS = bookCoverStatement.executeQuery();
+			
+			while(bookCoverRS.next()) {
+				bookCover += bookCoverRS.getString("bookCoverImg");
+			} // while
+			
 			con.close();
 			bookNameStatement.close();
 			bookNameRS.close();
 			bookPriceStatement.close();
 			bookPriceRS.close();
+			bookCoverStatement.close();
+			bookCoverRS.close();
 			
-			writer.println("<a href=/bookInfo?bookISBN=" + bookISBN + ">");
-			writer.println("<img src='" + bookSource + bookISBN + ".jpg' alt=\"img\" width=\"200\" height=\"300\">");
+			writer.println("<a href=/csci4050-bookstore/product_single.jsp?bookISBN=" + bookISBN + ">");
+			writer.println("<img src='" + bookSource + bookCover + ".jpg' alt=\"img\" width=\"200\" height=\"300\">");
 			writer.println("</a>");
 			writer.println("<h4>" + bookName + "</h4>");
 			writer.println("<h6><span class=\"price\">$" + bookPrice + "</span></h6>");

@@ -11,7 +11,6 @@ public class DatabaseConnection {
 		String dbPassword = "9995";
 		String dbOptions = "?serverTimezone=UTC&useSSL=false";
 		
-		System.out.println(dbURL + dbName + dbOptions);
 		Class.forName(dbDriver);
 		Connection connection = DriverManager.getConnection(dbURL + dbName + dbOptions, dbUsername, dbPassword);
 		

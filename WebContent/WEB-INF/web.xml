@@ -124,4 +124,44 @@
     <servlet-name>bookInfo</servlet-name>
     <url-pattern>/bookInfo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>addToCart</display-name>
+    <servlet-name>addToCart</servlet-name>
+    <servlet-class>controller.addToCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addToCart</servlet-name>
+    <url-pattern>/addToCart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>cart</display-name>
+    <servlet-name>cart</servlet-name>
+    <servlet-class>controller.cart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cart</servlet-name>
+    <url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>removeFromCart</display-name>
+    <servlet-name>removeFromCart</servlet-name>
+    <servlet-class>controller.removeFromCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>removeFromCart</servlet-name>
+    <url-pattern>/removeFromCart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>adminAddBook</display-name>
+    <servlet-name>adminAddBook</servlet-name>
+    <servlet-class>controller.adminAddBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminAddBook</servlet-name>
+    <url-pattern>/adminAddBook</url-pattern>
+  </servlet-mapping>
 </web-app>

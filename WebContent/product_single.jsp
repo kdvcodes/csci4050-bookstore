@@ -20,6 +20,7 @@
   	<title>Product</title>
 </head>
 <body>
+<jsp:include page="/bookInfo"></jsp:include>
   <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
@@ -94,22 +95,26 @@
 <section class="product-sec">
     <div class="container col-md-6">
         <div class="py-5">
-            <h1>Harry Potter and the Sorcerer's Stone</h1>
+            <h1>${bookName}</h1>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img src="images/harry2.jpg" alt="book" width="200" height="300">
+                <img src="images/books/${bookCoverImg}.jpg" alt="book" width="200" height="300">
             </div>
 
 
             <div class="col-md-8">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and Scrambled it to make a type and typesetting industry. Lorem Ipsum has been the book. </p>
-                <p>t has survived not only fiveLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and</p>
-
-                <div class="btn-sec">
-                    <button>Add To Cart</button>
-                    <button>Buy Now</button>
-                </div>
+            	<p>Publish year: ${bookYear}</p>
+            	<p>Author: ${bookAuthor}</p>
+                <p>${bookDesc}</p>
+				<p>Price: $${bookPrice}</p>
+                <form id="addToCart" action="/csci4050-bookstore/addToCart?bookISBN=${bookISBN}" method="post">
+	                <div class="btn-sec">
+	                    <button type="submit" form="addToCart">Add To Cart</button>
+	                    ${addedToCart}
+	                	${bookNotInStockMessage}
+	                </div>
+                </form>
             </div>
         </div>
     </div>

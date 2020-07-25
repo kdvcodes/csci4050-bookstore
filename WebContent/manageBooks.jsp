@@ -66,20 +66,20 @@
             <div class="row">
     <!-- edit form column -->
 			    <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-			        <form id="manage" class="form-horizontal" role="form" method="post" action="manage">
+			        <form id="addBook" class="form-horizontal" role="form" method="post" action="adminAddBook">
 			        	<div class="form-group">
 			                <label class="col-lg-3 control-label">Cover</label>
 			                <div class="col-lg-8">
-			                    <input type="file" id="cover_picture" name="cover_picture" accept="image"><br>
+			                    <input type="file" id="coverPicture" name="coverPicture" accept="image"><br>
 			                </div>
 			            </div>
 			            
 			            <div class="form-group">
 			                <label class="col-md-3 control-label">Genre</label>
 			                <div class="col-md-8">
-			                    <select id="cars" name="cars">
-								  <option value="volvo">Fiction</option>
-								  <option value="saab">Non-Fiction</option>
+			                    <select id="genre" name="genre">
+								  <option value="fiction">Fiction</option>
+								  <option value="nonfiction">Non-Fiction</option>
 								</select>
 			                </div>
 			            </div>
@@ -140,7 +140,7 @@
 			            <div class="form-group">
 			                <label class="col-md-3 control-label"></label>
 			                <div class="col-md-12">
-			                    <input type="button" class="btn btn-primary" value="Add Book" name="addBook" form="manage">
+			                    <input type="button" class="btn btn-primary" value="Add Book" name="addBook" form="addBook">
 			                </div>
 			            </div>
 			
