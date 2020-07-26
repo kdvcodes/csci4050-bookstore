@@ -164,4 +164,14 @@
     <servlet-name>adminAddBook</servlet-name>
     <url-pattern>/adminAddBook</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updateCart</display-name>
+    <servlet-name>updateCart</servlet-name>
+    <servlet-class>controller.updateCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateCart</servlet-name>
+    <url-pattern>/updateCart</url-pattern>
+  </servlet-mapping>
 </web-app>

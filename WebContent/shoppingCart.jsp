@@ -128,72 +128,31 @@
                             </tr>
                             </thead>
                             <tbody>
-                            
-                            <tr>
-	                            <form method="post" name="book" action="">
-	                             <th scope="row" class="border-0">
-	                                    <div class="p-2">
-	                                        <img src="images/books/0439708184.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-	                                        <div class="ml-3 d-inline-block align-middle">
-	                                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Harry Potter and the Sorcerer's Stone</a></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
-	                                        </div>
-	                                    </div>
-	                                </th>
-	                                <td class="border-0 align-middle"><strong>$49.00</strong></td>
-	                                <td class="border-0 align-middle">
-	                                    <strong>
-	                                        <div class="def-number-input number-input safari_only mb-0 w-10 ">
-	                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-	                                            <button class="quantity" type="submit" form="book">Update</button>
+                            ${cartItems}
+<!--                             <tr> -->
+<!-- 	                            <form method="post" name="book" action=""> -->
+<!-- 	                             <th scope="row" class="border-0"> -->
+<!-- 	                                    <div class="p-2"> -->
+<!-- 	                                        <img src="images/books/0439708184.jpg" alt="" width="70" class="img-fluid rounded shadow-sm"> -->
+<!-- 	                                        <div class="ml-3 d-inline-block align-middle"> -->
+<!-- 	                                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Harry Potter and the Sorcerer's Stone</a></h5><span class="text-muted font-weight-normal font-italic d-block"></span> -->
+<!-- 	                                        </div> -->
+<!-- 	                                    </div> -->
+<!-- 	                                </th> -->
+<!-- 	                                <td class="border-0 align-middle"><strong>$49.00</strong></td> -->
+<!-- 	                                <td class="border-0 align-middle"> -->
+<!-- 	                                    <strong> -->
+<!-- 	                                        <div class="def-number-input number-input safari_only mb-0 w-10 "> -->
+<!-- 	                                            <input class="quantity" min="0" name="quantity" value="1" type="number"> -->
+<!-- 	                                            <button class="quantity" type="submit" form="book">Update</button> -->
 	                                            
-	                                        </div>
-	                                    </strong>
-	                                </td>
-	                                <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-	                            </form>
+<!-- 	                                        </div> -->
+<!-- 	                                    </strong> -->
+<!-- 	                                </td> -->
+<!-- 	                                <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td> -->
+<!-- 	                            </form> -->
                                
-                            </tr>
-                            
-                            <tr>
-                                <th scope="row">
-                                    <div class="p-2">
-                                        <img src="images/books/0439064872.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                                        <div class="ml-3 d-inline-block align-middle">
-                                            <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Harry Potter and the Chamber of Secrets</a></h5><span class="text-muted font-weight-normal font-italic"></span>
-                                        </div>
-                                    </div>
-                                </th>
-                                <td class="align-middle"><strong>$29.00</strong></td>
-                                <td class="align-middle">
-                                    <strong>
-                                        <div class="def-number-input number-input safari_only mb-0 w-100">
-                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                        </div>
-                                    </strong>
-                                </td>
-                                <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <div class="p-2">
-                                        <img src="images/books/0439136369.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                                        <div class="ml-3 d-inline-block align-middle">
-                                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Harry Potter and the Prisoner of Azkaban</a></h5><span class="text-muted font-weight-normal font-italic"></span>
-                                        </div>
-                                    </div>
-                                <td class="align-middle"><strong>$16.00</strong></td>
-                                <td class="align-middle">
-                                    <strong>
-                                        <div class="def-number-input number-input safari_only mb-0 w-100">
-                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                        </div>
-
-                                    </strong>
-                                </td>
-                                <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
+<!--                             </tr> -->
                             </tbody>
                         </table>
                     </div>
@@ -207,11 +166,11 @@
                     <div class="p-4">
                         <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
                         <ul class="list-unstyled mb-4">
-                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
-                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
-                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
+                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$${totalPrice }</strong></li>
+                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$${shipping }</strong></li>
+                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$${tax }</strong></li>
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                                <h5 class="font-weight-bold">$400.00</h5>
+                                <h5 class="font-weight-bold">$${subTotal }</h5>
                             </li>
                         </ul><a href="checkout.jsp" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
                     </div>

@@ -47,15 +47,22 @@ public class addToCart extends HttpServlet {
 		String bookISBN = request.getQueryString().split("=")[1];
 		System.out.println("From add to cart::bookISBN: " + bookISBN);
 		Cookie[] cookies = request.getCookies();
+		
+		for(int i = 0; i < cookies.length; i++) {
+			System.out.println("addToCart::checking cookies: " + cookies[i].getName() + " : "+ cookies[i].getValue());
+		}
+		
 		if(cookies != null) {
 			for(Cookie cookie: cookies) {
 				if(cookie.getName().equals("user")) {
 					userEmail = cookie.getValue();
-				} else {
-					request.getRequestDispatcher("/login.jsp").forward(request, response);
-					return;
-				} // if else
+				} // if
 			} // for
+		} // if
+		
+		if(userEmail.equals("")) {
+			request.getRequestDispatcher("/login.jsp").forward(request, response);
+			return;
 		} // if
 		
 		try {

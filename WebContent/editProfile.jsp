@@ -105,7 +105,7 @@
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
 
                     <div class="col-md-12 personal-info">
-<%--                     <% --%>
+                    <%
 // 						String userName = null;
 // 						Cookie[] cookies = request.getCookies();
 // 						if(cookies !=null){
@@ -117,7 +117,7 @@
 // 						if(userName != null) {
 // 							out.println("Logged in as <b>" + userName + "</b>");
 // 						} // if
-<%-- 					%> --%>
+					%>
                     <hr>
                         <form class="form-horizontal" role="form" method="post">
                         <div class="error-message">${passwordMismatchError}</div>

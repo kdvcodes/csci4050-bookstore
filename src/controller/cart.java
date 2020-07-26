@@ -18,9 +18,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class cart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	String userEmail = "";
-	String userId = "";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,6 +32,8 @@ public class cart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String userEmail = "";
+		String userId = "";
 		PrintWriter writer = response.getWriter();
 		Cookie[] cookies = request.getCookies();
 		if(cookies != null) {
@@ -56,6 +55,7 @@ public class cart extends HttpServlet {
 			ArrayList<String> bookQuantityInCart = new ArrayList<String>();
 			ArrayList<String> bookNamesInCart = new ArrayList<String>();
 			ArrayList<String> bookPriceInCart = new ArrayList<String>();
+			ArrayList<String> bookCoverInCart = new ArrayList<String>();
 			
 			Connection con = DatabaseConnection.initializeDatabase();
 			
@@ -106,13 +106,86 @@ public class cart extends HttpServlet {
 				
 				while(getBookPriceInCartRS.next()) {
 					bookPriceInCart.add(getBookPriceInCartRS.getString("bookPrice"));
-				}
+				} // while
+				
+				String getBookCoverInCartQuery = "select bookCoverImg from bookstore.book where bookISBN = '" + booksInCart.get(i) + "';";
+				PreparedStatement getBookCoverInCartStatement = con.prepareStatement(getBookCoverInCartQuery);
+				ResultSet getBookCoverInCartRS = getBookCoverInCartStatement.executeQuery();
+				
+				while(getBookCoverInCartRS.next()) {
+					bookCoverInCart.add(getBookCoverInCartRS.getString("bookCoverImg"));
+				} // while
 			} // for
 			
-			for(int i = 0; i < carts.size(); i++) {
-				System.out.println("Name of book: " + bookNamesInCart.get(i) + " Quantity: " + bookQuantityInCart.get(i) + " Price: " + bookPriceInCart.get(i));
-			}
+			if(carts.size() > 0) {
+				String cartItemsString = "";
+				for(int i = 0; i < carts.size(); i++) {
+					String borderOpt = "border-0";
+//					if(i == 0) {
+//						borderOpt = "";
+//					} // if
+					cartItemsString += "<tr>\n" + 
+							"	                            <form method=\"post\" id=\""
+							+ booksInCart.get(i)
+							+ "\" action=\"updateCart?userId="
+							+ userId + "&bookISBN="
+									+ booksInCart.get(i)
+							+ "\">\n" + 
+							"	                             <th scope=\"row\" class=\"" + borderOpt + "\">\n" + 
+							"	                                    <div class=\"p-2\">\n" + 
+							"	                                        <img src=\"images/books/" + bookCoverInCart.get(i) + "\" alt=\"\" width=\"70\" class=\"img-fluid rounded shadow-sm\">\n" + 
+							"	                                        <div class=\"ml-3 d-inline-block align-middle\">\n" + 
+							"	                                            <h5 class=\"mb-0\"> <a href=\"#\" class=\"text-dark d-inline-block align-middle\">"
+							+ bookNamesInCart.get(i)
+							+ "</a></h5><span class=\"text-muted font-weight-normal font-italic d-block\"></span>\n" + 
+							"	                                        </div>\n" + 
+							"	                                    </div>\n" + 
+							"	                                </th>\n" + 
+							"	                                <td class=\"" + borderOpt + " align-middle\"><strong>$"
+									+ bookPriceInCart.get(i)
+									+ "</strong></td>\n" + 
+							"	                                <td class=\"" + borderOpt + " align-middle\">\n" + 
+							"	                                    <strong>\n" + 
+							"	                                        <div class=\"def-number-input number-input safari_only mb-0 w-10 \">\n" + 
+							"	                                            <input class=\"quantity\" min=\"0\" name=\"quantity\" value=\""
+							+ bookQuantityInCart.get(i)
+							+ "\" type=\"number\">\n" + 
+							"	                                            <button class=\"quantity\" type=\"submit\" form=\""
+							+ booksInCart.get(i)
+							+ "\">Update</button>\n" + 
+							"	                                            \n" + 
+							"	                                        </div>\n" + 
+							"	                                    </strong>\n" + 
+							"	                                </td>\n" + 
+							"	                                <td class=\"" + borderOpt + " align-middle\"><a href=\""
+									+ "/removeFromCart?userId=" + userId + "&bookISBN=" + booksInCart.get(i)
+									+ "\" class=\"text-dark\"><i class=\"fa fa-trash\"></i></a></td>\n" + 
+							"	                            </form>\n" + 
+							"                               \n" + 
+							"                            </tr>";
+				} // for
+				
+				request.setAttribute("cartItems", cartItemsString);
+			} else {
+				request.setAttribute("cartItems", "No item in cart!");
+			} // if else
 			
+			double totalPrice = 0;
+			double shipping = 10;
+			double taxRate = 0.06;
+			double tax = 0;
+			double subTotal = 0;
+			
+			for(int i = 0; i < carts.size(); i++) {
+				totalPrice += (Double.parseDouble(bookPriceInCart.get(i)) * Double.parseDouble(bookQuantityInCart.get(i)));
+			} // for
+			
+			tax = ((totalPrice + shipping) * taxRate);
+			subTotal = (totalPrice + shipping) + tax;
+			request.setAttribute("totalPrice", totalPrice);
+			request.setAttribute("shipping", shipping);
+			request.setAttribute("tax", tax);
+			request.setAttribute("subTotal", subTotal);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

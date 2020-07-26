@@ -25,7 +25,7 @@ public class removeFromCart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("removeFromCart::doGet");
 	}
 
 	/**
@@ -33,7 +33,12 @@ public class removeFromCart extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		System.out.println("removeFromCart::doPost");
+		String queryString = request.getQueryString();
+		String userId = queryString.split("&")[0].split("=")[1];
+		String bookISBN = queryString.split("&")[1].split("=")[1];
+		
+		System.out.println("userId: " + userId + " bookISBN: " + bookISBN);
+	} // doPost
 
 }

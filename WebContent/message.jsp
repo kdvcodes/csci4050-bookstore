@@ -106,22 +106,22 @@
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
 					<div class="messages">
                    	
-<%--                    	<% --%>
-// 						String userName = null;
-// 						Cookie[] cookies = request.getCookies();
-// 						if(cookies !=null){
-// 							for(Cookie cookie : cookies){
-// 								if(cookie.getName().equals("user")) userName = cookie.getValue();
-// 							} // for
-// 						} // if
-// 						System.out.println("MESSAGE BOARD:: Current User Name: " + userName);
-// 						if(userName == null) {
-// // 							response.sendRedirect("login.jsp");
-// 							out.println("You're not logged in.");
-// 						} else {
-// 							out.println("Logged in as " + userName);
-// 						}
-<%-- 					%> --%>
+					<%
+ 						String userName = null;
+ 						Cookie[] cookies = request.getCookies();
+						if(cookies !=null){
+ 							for(Cookie cookie : cookies){
+ 								if(cookie.getName().equals("user")) userName = cookie.getValue();
+							} // for
+						} // if
+						System.out.println("MESSAGE BOARD:: Current User Name: " + userName);
+ 						if(userName == null) {
+							response.sendRedirect("login.jsp");
+							out.println("You're not logged in.");
+ 						} else {
+							out.println("Logged in as " + userName);
+ 						}
+					%>
 					<div class="error-message">${userTypeError}</div>
 					<div class="message">${activationMessage}</div>
 					<div class="message">${passwordRecoveryMessage}</div>
