@@ -49,7 +49,12 @@ public class addToCart extends HttpServlet {
 		Cookie[] cookies = request.getCookies();
 		if(cookies != null) {
 			for(Cookie cookie: cookies) {
-				if(cookie.getName().equals("user")) userEmail = cookie.getValue();
+				if(cookie.getName().equals("user")) {
+					userEmail = cookie.getValue();
+				} else {
+					request.getRequestDispatcher("/login.jsp").forward(request, response);
+					return;
+				} // if else
 			} // for
 		} // if
 		

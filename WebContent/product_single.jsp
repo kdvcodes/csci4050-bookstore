@@ -99,7 +99,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img src="images/books/${bookCoverImg}.jpg" alt="book" width="200" height="300">
+                <img src="images/books/${bookCoverImg}" alt="book" width="200" height="300">
             </div>
 
 

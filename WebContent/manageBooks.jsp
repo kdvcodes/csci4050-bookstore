@@ -123,7 +123,7 @@
 			            <div class="form-group">
 			                <label class="col-md-3 control-label">Quantity in Stock</label>
 			                <div class="col-md-12">
-			                    <input class="form-control" type="password" name="quantity">
+			                    <input class="form-control" type="text" name="quantity">
 			                </div>
 			            </div>
 			           
@@ -140,7 +140,9 @@
 			            <div class="form-group">
 			                <label class="col-md-3 control-label"></label>
 			                <div class="col-md-12">
-			                    <input type="button" class="btn btn-primary" value="Add Book" name="addBook" form="addBook">
+			                    <input type="submit" class="btn btn-primary" value="Add Book">
+			                    ${successAddingBook}
+			                    ${failAddingBook}
 			                </div>
 			            </div>
 			

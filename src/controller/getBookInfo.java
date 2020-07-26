@@ -78,7 +78,7 @@ public class getBookInfo extends HttpServlet {
 			bookCoverRS.close();
 			
 			writer.println("<a href=/csci4050-bookstore/product_single.jsp?bookISBN=" + bookISBN + ">");
-			writer.println("<img src='" + bookSource + bookCover + ".jpg' alt=\"img\" width=\"200\" height=\"300\">");
+			writer.println("<img src='" + bookSource + bookCover + "' alt=\"img\" width=\"200\" height=\"300\">");
 			writer.println("</a>");
 			writer.println("<h4>" + bookName + "</h4>");
 			writer.println("<h6><span class=\"price\">$" + bookPrice + "</span></h6>");

@@ -129,7 +129,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="item">
           <jsp:include page="/getBookInfo" flush="true">
-          	<jsp:param name="bookISBN" value="1423101472" />
+          	<jsp:param name="bookISBN" value="6227306" />
           </jsp:include>
         </div>
       </div>
