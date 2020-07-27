@@ -128,31 +128,36 @@
                             </tr>
                             </thead>
                             <tbody>
-                            ${cartItems}
-<!--                             <tr> -->
-<!-- 	                            <form method="post" name="book" action=""> -->
-<!-- 	                             <th scope="row" class="border-0"> -->
-<!-- 	                                    <div class="p-2"> -->
-<!-- 	                                        <img src="images/books/0439708184.jpg" alt="" width="70" class="img-fluid rounded shadow-sm"> -->
-<!-- 	                                        <div class="ml-3 d-inline-block align-middle"> -->
-<!-- 	                                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Harry Potter and the Sorcerer's Stone</a></h5><span class="text-muted font-weight-normal font-italic d-block"></span> -->
-<!-- 	                                        </div> -->
-<!-- 	                                    </div> -->
-<!-- 	                                </th> -->
-<!-- 	                                <td class="border-0 align-middle"><strong>$49.00</strong></td> -->
-<!-- 	                                <td class="border-0 align-middle"> -->
-<!-- 	                                    <strong> -->
-<!-- 	                                        <div class="def-number-input number-input safari_only mb-0 w-10 "> -->
-<!-- 	                                            <input class="quantity" min="0" name="quantity" value="1" type="number"> -->
-<!-- 	                                            <button class="quantity" type="submit" form="book">Update</button> -->
+                             ${cartItems}
+                            <!-- <tr>
+	                            <form method="post" name="book" action="">
+	                             <th scope="row" class="border-0">
+	                                    <div class="p-2">
+	                                        <img src="images/books/0439708184.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+	                                        <div class="ml-3 d-inline-block align-middle">
+	                                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Harry Potter and the Sorcerer's Stone</a></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
+	                                        </div>
+	                                    </div>
+	                                </th>
+	                                <td class="border-0 align-middle"><strong>$49.00</strong></td>
+	                                <td class="border-0 align-middle">
+	                                    <strong>
+	                                        <div class="def-number-input number-input safari_only mb-0 w-10 ">
+	                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+	                                            <button class="quantity" type="submit" form="book">Update</button>
 	                                            
-<!-- 	                                        </div> -->
-<!-- 	                                    </strong> -->
-<!-- 	                                </td> -->
-<!-- 	                                <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td> -->
-<!-- 	                            </form> -->
+	                                        </div>
+	                                    </strong>
+	                                </td>
+	                                <td class="border-0 align-middle">
+	                                	<form method="post" name="remove" action="">
+	                                		<button class="remove" type="submit" form="remove">Remove</button>
+	                                	</form>
+	                                	
+	                                </td>
+	                            </form> -->
                                
-<!--                             </tr> -->
+                            </tr>
                             </tbody>
                         </table>
                     </div>
