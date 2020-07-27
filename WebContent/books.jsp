@@ -92,81 +92,35 @@ To change this template use File | Settings | File Templates.
 		});
 	});
 </script>
-<div class="container">
-    <form class="form-inline">
-        <div class="input-group" id="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Filter By
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Title</a>
-                <a class="dropdown-item" href="#">Author</a>
-                <a class="dropdown-item" href="#">ISBN</a>
-                <a class="dropdown-item" href="#">All Books</a>
-            </div>
-        </div>
-        <div class="input-group" id="search">
-            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
-            <div class="input-group-btn">
-                <button class="btn btn-primary" type="submit">Submit</button>
-            </div>
-        </div>
-    </form>
-</div>
+<!-- <div class="container"> -->
+<!--     <form class="form-inline"> -->
+<!--         <div class="input-group" id="dropdown"> -->
+<!--             <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+<!--                 Filter By -->
+<!--             </button> -->
+<!--             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> -->
+<!--                 <a class="dropdown-item" href="#">Title</a> -->
+<!--                 <a class="dropdown-item" href="#">Author</a> -->
+<!--                 <a class="dropdown-item" href="#">ISBN</a> -->
+<!--                 <a class="dropdown-item" href="#">All Books</a> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--         <div class="input-group" id="search"> -->
+<!--             <input type = "text" class="form-control" placeholder="Search Books" name="Search"> -->
+<!--             <div class="input-group-btn"> -->
+<!--                 <button class="btn btn-primary" type="submit">Submit</button> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </form> -->
+<!-- </div> -->
+
+<br>
 
 <section class="static about-sec">
     <div class="container">
         <div class="recomended-sec">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <img src="images/harry1.jpeg" alt="img" width="200" height="300">
-                        <h3>Harry Potter and the Sorcerer's Stone</h3>
-                        <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
-                        <div class="hover">
-                            <a href="product_single.jsp">
-                                <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <img src="images/harry2.jpg" alt="img" width="200" height="300">
-                        <h3>Harry Potter and the Chamber of Secrets</h3>
-                        <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        <span class="sale">Sale !</span>
-                        <div class="hover">
-                            <a href="product_single.jsp">
-                                <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <img src="images/harry3.jpg" alt="img" width="200" height="300">
-                        <h3>Harry Potter and the Prisoner of Azkaban</h3>
-                        <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
-                        <div class="hover">
-                            <a href="product_single.jsp">
-                                <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <img src="images/harry4.jpg" alt="img" width="200" height="300">
-                        <h3>Harry Potter and the Goblet of Fire</h3>
-                        <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
-                        <div class="hover">
-                            <a href="product_single.jsp">
-                                <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+				<jsp:include page="/books"></jsp:include>
             </div>
         </div>
     </div>

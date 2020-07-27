@@ -20,7 +20,7 @@
   	<title>Checkout</title>
 </head>
 <body>
-
+<jsp:include page="/checkout"></jsp:include>
   <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
@@ -141,13 +141,14 @@
                                     <strong>$${totalOrder}</strong>
                                 </li>
                             </ul>
-                            <form class="card p-2">
+                            <form class="card p-2" id="addPromo" action="applyPromo?userId=${userId}&totalPrice=${totalPrice}&shipping=${shipping}&tax=${tax}" method="post">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Promo code">
+                                    <input type="text" class="form-control" placeholder="Promo Code" name="promoCodeInput">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-secondary">Redeem</button>
+                                        <button type="submit" class="btn btn-secondary" form="addPromo">Redeem</button>
                                     </div>
                                 </div>
+                                ${promoError}
                             </form>
                         </div>
                         
@@ -160,24 +161,24 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="firstName">First name</label>
-                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="${}" value="" required="">
+                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="${firstName}" value="" required="">
                                         <div class="invalid-feedback"> Valid first name is required. </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="lastName">Last name</label>
-                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="${}" value="" required="">
+                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="${lastName}" value="" required="">
                                         <div class="invalid-feedback"> Valid last name is required. </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="street">Street</label>
-                                    <input class="form-control" name="street" type="text" placeholder="${}">
+                                    <input class="form-control" name="street" type="text" placeholder="${street}">
                                     <div class="invalid-feedback"> Please enter your shipping address. </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 mb-3">
                                         <label for="city">City</label>
-                                         <input type="text" class="form-control" name="city" id="city" placeholder="${}">
+                                         <input type="text" class="form-control" name="city" id="city" placeholder="${city}">
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="state">State</label>
@@ -239,13 +240,13 @@
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="zip">Zip</label>
-                                        <input type="text" class="form-control" name="zip" id="zip" placeholder="${}" required="">
+                                        <input type="text" class="form-control" name="zip" id="zip" placeholder="${zip}" required="">
                                         <div class="invalid-feedback"> Zip code required. </div>
                                     </div>
                                 </div>
-                                <hr class="mb-4">
+<!--                                 <hr class="mb-4"> -->
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="same-address" id="same-address">
+                                    <input type="checkbox" class="custom-control-input" name="same-address" id="same-address" ${addressExistCheck}>
                                     <label class="custom-control-label" for="same-address">Use saved address for shipping and billing</label>
                                 </div>
                                 <hr class="mb-4">
@@ -263,31 +264,31 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="cc-name">Name on card</label>
-                                        <input type="text" class="form-control" name="nameOnCard" id="cc-name" placeholder="${}" required="">
+                                        <input type="text" class="form-control" name="nameOnCard" id="cc-name" placeholder="${cardName}" required="">
                                         <small class="text-muted">Full name as displayed on card</small>
                                         <div class="invalid-feedback"> Name on card is required </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="cc-number">Credit Card number</label>
-                                        <input type="text" class="form-control" name="cardNumber" id="cc-number" placeholder="${}" required="">
+                                        <input type="text" class="form-control" name="cardNumber" id="cc-number" placeholder="${cardNumber}" required="">
                                         <div class="invalid-feedback"> Credit card number is required </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3 mb-3">
                                         <label for="cc-expiration">Expiration</label>
-                                        <input type="text" class="form-control" name="expiration" id="cc-expiration" placeholder="${}" required="">
+                                        <input type="text" class="form-control" name="expiration" id="cc-expiration" placeholder="${cardExp}" required="">
                                         <div class="invalid-feedback"> Expiration date required </div>
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="cc-cvv">CVV</label>
-                                        <input type="text" class="form-control" name="cvv" id="cc-cvv" placeholder="${}" required="">
+                                        <input type="text" class="form-control" name="cvv" id="cc-cvv" placeholder="${cardCVV}" required="">
                                         <div class="invalid-feedback"> Security code required </div>
                                     </div>
                                 </div>
                                 
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="same-payment" id="same-payment">
+                                    <input type="checkbox" class="custom-control-input" name="same-payment" id="same-payment" ${paymentExistCheck}>
                                     <label class="custom-control-label" for="same-payment">Use saved payment method</label>
                                 </div>
                                 

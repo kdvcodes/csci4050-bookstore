@@ -177,7 +177,7 @@
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                                 <h5 class="font-weight-bold">$${subTotal }</h5>
                             </li>
-                        </ul><a href="checkout.jsp?userId=${userId}&totalPrice=${totalPrice}&shipping=${shipping}&tax=${tax}" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
+                        </ul><a href="checkout.jsp?userId=${userId}&totalPrice=${totalPrice}&shipping=${shipping}&tax=${tax}&promotion=false" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
                     </div>
                 </div>
             </div>
