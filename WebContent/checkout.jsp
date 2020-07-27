@@ -115,35 +115,29 @@
                                     <div>
                                         <h6 class="my-0">Order Subtotal</h6>
                                     </div>
-                                    <span class="text-muted">$390.00</span>
                                     <span class="text-muted">$${totalPrice}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
                                         <h6 class="my-0">Shipping and handling</h6>
                                     </div>
-                                    <span class="text-muted">$10.00</span>
                                     <span class="text-muted">$${shipping}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
                                         <h6 class="my-0">Tax</h6>
                                     </div>
-                                    <span class="text-muted">$0.00</span>
                                     <span class="text-muted">$${tax}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between bg-light">
                                     <div class="text-success">
                                         <h6 class="my-0">Promo code</h6>
-                                        <small>EXAMPLECODE</small>
                                         <small>${promoCode}</small>
                                     </div>
-                                    <span class="text-success">-$5</span>
                                     <span class="text-success">-$${promoAmount}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between">
                                     <span>Total (USD)</span>
-                                    <strong>$20</strong>
                                     <strong>$${totalOrder}</strong>
                                 </li>
                             </ul>
@@ -159,6 +153,8 @@
                         
                         
                 <div class="col-md-8 order-md-1">
+                <p>${addressExist}</p>
+                <p>${paymentExist}</p>
                             <h4 class="mb-3">Billing Address</h4>
                             <form id="checkout" class="needs-validation" novalidate="" action="checkout" method="post">
                                 <div class="row">
@@ -190,8 +186,58 @@
                                     <div class="col-md-4 mb-3">
                                         <label for="state">State</label>
                                         <select class="custom-select d-block w-100" name="state"id="state" required="">
-                                            <option value="">Georgia</option>
-                                            <option>Alabama</option>
+                                            <option value="">Choose...</option>
+									<option value="AL">Alabama</option>
+									<option value="AK">Alaska</option>
+									<option value="AZ">Arizona</option>
+									<option value="AR">Arkansas</option>
+									<option value="CA">California</option>
+									<option value="CO">Colorado</option>
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="DC">District Of Columbia</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="HI">Hawaii</option>
+									<option value="ID">Idaho</option>
+									<option value="IL">Illinois</option>
+									<option value="IN">Indiana</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NV">Nevada</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NM">New Mexico</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="ND">North Dakota</option>
+									<option value="OH">Ohio</option>
+									<option value="OK">Oklahoma</option>
+									<option value="OR">Oregon</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="SD">South Dakota</option>
+									<option value="TN">Tennessee</option>
+									<option value="TX">Texas</option>
+									<option value="UT">Utah</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WA">Washington</option>
+									<option value="WV">West Virginia</option>
+									<option value="WI">Wisconsin</option>
+									<option value="WY">Wyoming</option>
                                         </select>
                                         <div class="invalid-feedback"> Please provide a valid state. </div>
                                     </div>
