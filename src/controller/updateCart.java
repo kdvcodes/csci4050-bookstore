@@ -55,7 +55,8 @@ public class updateCart extends HttpServlet {
 			} // while
 			
 			if(Integer.parseInt(numBook) <= 0) {
-				// forward to remove book
+				request.getRequestDispatcher("/removeFromCart?userId=" + userId + "&bookISBN=" + bookISBN).forward(request, response);
+				return;
 			} else if(Integer.parseInt(numBook) > bookInStock) {
 				String setBookCartToStockQuery = "UPDATE `bookstore`.`cart` SET `cartBookNumber` = '" + bookInStock + "' WHERE cartUserId = " + userId + " and cartBookId = " + bookISBN + ";";
 				PreparedStatement setBookCartToStockStatement = con.prepareStatement(setBookCartToStockQuery);

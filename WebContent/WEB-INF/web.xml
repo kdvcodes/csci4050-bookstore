@@ -174,4 +174,14 @@
     <servlet-name>updateCart</servlet-name>
     <url-pattern>/updateCart</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>checkout</display-name>
+    <servlet-name>checkout</servlet-name>
+    <servlet-class>controller.checkout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>checkout</servlet-name>
+    <url-pattern>/checkout</url-pattern>
+  </servlet-mapping>
 </web-app>

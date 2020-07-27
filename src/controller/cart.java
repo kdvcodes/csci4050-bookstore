@@ -126,7 +126,7 @@ public class cart extends HttpServlet {
 //					} // if
 					cartItemsString += "<tr>\n" + 
 							"	                            <form method=\"post\" id=\""
-							+ booksInCart.get(i)
+							+ "u" + booksInCart.get(i)
 							+ "\" action=\"updateCart?userId="
 							+ userId + "&bookISBN="
 									+ booksInCart.get(i)
@@ -151,16 +151,23 @@ public class cart extends HttpServlet {
 							+ bookQuantityInCart.get(i)
 							+ "\" type=\"number\">\n" + 
 							"	                                            <button class=\"quantity\" type=\"submit\" form=\""
-							+ booksInCart.get(i)
+							+ "u" + booksInCart.get(i)
 							+ "\">Update</button>\n" + 
 							"	                                            \n" + 
 							"	                                        </div>\n" + 
-							"	                                    </strong>\n" + 
-							"	                                </td>\n" + 
-							"	                                <td class=\"" + borderOpt + " align-middle\"><a href=\""
-									+ "/removeFromCart?userId=" + userId + "&bookISBN=" + booksInCart.get(i)
-									+ "\" class=\"text-dark\"><i class=\"fa fa-trash\"></i></a></td>\n" + 
-							"	                            </form>\n" + 
+							"	                                    </strong>\n" +  "</form>\n" +
+							"	                                </td>\n" +
+							"	                                <td class=\"" + borderOpt + " align-middle\"><form method=\"post\" id=\""
+									+ "r" + booksInCart.get(i)
+									+ "\" name=\"remove\" action=\"removeFromCart?userId="
+									+ userId
+									+ "&bookISBN="
+									+ booksInCart.get(i)
+									+ "\">\n" + 
+									"	                                		<button class=\"remove\" type=\"submit\" form=\""
+									+ "r" + booksInCart.get(i)
+									+ "\">Remove</button>\n" + 
+									"	                                	</form></td>" +
 							"                               \n" + 
 							"                            </tr>";
 				} // for

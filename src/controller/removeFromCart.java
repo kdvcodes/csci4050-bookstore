@@ -1,6 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,12 +36,22 @@ public class removeFromCart extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("removeFromCart::doPost");
 		String queryString = request.getQueryString();
+		System.out.println("removeFromCart::doPost:queryString: " + queryString);
 		String userId = queryString.split("&")[0].split("=")[1];
 		String bookISBN = queryString.split("&")[1].split("=")[1];
 		
-		System.out.println("userId: " + userId + " bookISBN: " + bookISBN);
+		try {
+			Connection con = DatabaseConnection.initializeDatabase();
+			
+			String removeBookFromCartQuery = "delete from bookstore.cart where cartBookId = " + bookISBN + " and cartUserId = " + userId + ";";
+			PreparedStatement removeBookFromCartStatement = con.prepareStatement(removeBookFromCartQuery);
+			removeBookFromCartStatement.execute();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		request.getRequestDispatcher("shoppingCart.jsp").forward(request, response);
 	} // doPost
 
 }
