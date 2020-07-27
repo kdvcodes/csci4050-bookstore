@@ -25,7 +25,27 @@ public class checkout extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String queryString = request.getQueryString();
+		String userId = queryString.split("&")[0].split("=")[1];
+		double totalPrice = Double.parseDouble(queryString.split("&")[1].split("=")[1]);
+		double shipping = Double.parseDouble(queryString.split("&")[2].split("=")[1]);
+		double tax = Double.parseDouble(queryString.split("&")[3].split("=")[1]);
+		double promoAmount = 0;
+		double totalOrder = 0;
+		String promoCode = "NONE";
 		
+		if(request.getParameterMap().containsKey("promo")) {
+			promoAmount = Double.parseDouble(request.getParameter("promo"));
+		} // if
+		
+		totalOrder = totalPrice + shipping + tax - promoAmount;
+		
+		request.setAttribute("totalPrice", totalPrice);
+		request.setAttribute("shipping", shipping);
+		request.setAttribute("tax", tax);
+		request.setAttribute("promoCode", promoCode);
+		request.setAttribute("promoAmount", promoAmount);
+		request.setAttribute("totalOrder", totalOrder);
 	} // doGet
 
 	/**

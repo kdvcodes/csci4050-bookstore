@@ -193,6 +193,7 @@ public class cart extends HttpServlet {
 			request.setAttribute("shipping", shipping);
 			request.setAttribute("tax", tax);
 			request.setAttribute("subTotal", subTotal);
+			request.setAttribute("userId", userId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -20,6 +20,7 @@
   	<title>Checkout</title>
 </head>
 <body>
+<jsp:include page="/checkout"></jsp:include>
   <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
@@ -116,30 +117,30 @@
                                     <div>
                                         <h6 class="my-0">Order Subtotal</h6>
                                     </div>
-                                    <span class="text-muted">$390.00</span>
+                                    <span class="text-muted">$${totalPrice}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
                                         <h6 class="my-0">Shipping and handling</h6>
                                     </div>
-                                    <span class="text-muted">$10.00</span>
+                                    <span class="text-muted">$${shipping}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
                                         <h6 class="my-0">Tax</h6>
                                     </div>
-                                    <span class="text-muted">$0.00</span>
+                                    <span class="text-muted">$${tax}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between bg-light">
                                     <div class="text-success">
                                         <h6 class="my-0">Promo code</h6>
-                                        <small>EXAMPLECODE</small>
+                                        <small>${promoCode}</small>
                                     </div>
-                                    <span class="text-success">-$5</span>
+                                    <span class="text-success">-$${promoAmount}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between">
                                     <span>Total (USD)</span>
-                                    <strong>$20</strong>
+                                    <strong>$${totalOrder}</strong>
                                 </li>
                             </ul>
                             <form class="card p-2">
@@ -206,7 +207,7 @@
                                 <div class="custom-control custom-checkbox">
 									 <div class="checkbox">
 						                <label data-toggle="collapse" data-target="#collapseOne">
-						                    <input type="checkbox" name="same-address" id="same-address"/> Use new shipping and billing address
+						                    <input type="checkbox" name="newAddress" id="same-address"/> Use new shipping and billing address
 						                </label>
 						            </div>
                                 </div>

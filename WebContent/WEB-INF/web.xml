@@ -184,4 +184,14 @@
     <servlet-name>checkout</servlet-name>
     <url-pattern>/checkout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>applyPromo</display-name>
+    <servlet-name>applyPromo</servlet-name>
+    <servlet-class>controller.applyPromo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>applyPromo</servlet-name>
+    <url-pattern>/applyPromo</url-pattern>
+  </servlet-mapping>
 </web-app>
