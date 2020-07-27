@@ -20,7 +20,7 @@
   	<title>Checkout</title>
 </head>
 <body>
-<jsp:include page="/checkout"></jsp:include>
+
   <nav class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     	<div class="navbar-header">
@@ -160,24 +160,24 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="firstName">First name</label>
-                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Jane" value="" required="">
+                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="${}" value="" required="">
                                         <div class="invalid-feedback"> Valid first name is required. </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="lastName">Last name</label>
-                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Smith" value="" required="">
+                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="${}" value="" required="">
                                         <div class="invalid-feedback"> Valid last name is required. </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="street">Street</label>
-                                    <input class="form-control" name="street" type="text" value="123 Main St">
+                                    <input class="form-control" name="street" type="text" placeholder="${}">
                                     <div class="invalid-feedback"> Please enter your shipping address. </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 mb-3">
                                         <label for="city">City</label>
-                                         <input type="text" class="form-control" name="city" id="city" placeholder="Columbus">
+                                         <input type="text" class="form-control" name="city" id="city" placeholder="${}">
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="state">State</label>
@@ -239,7 +239,7 @@
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="zip">Zip</label>
-                                        <input type="text" class="form-control" name="zip" id="zip" placeholder="31909" required="">
+                                        <input type="text" class="form-control" name="zip" id="zip" placeholder="${}" required="">
                                         <div class="invalid-feedback"> Zip code required. </div>
                                     </div>
                                 </div>
@@ -263,25 +263,25 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="cc-name">Name on card</label>
-                                        <input type="text" class="form-control" name="nameOnCard" id="cc-name" placeholder="Jane Smith" required="">
+                                        <input type="text" class="form-control" name="nameOnCard" id="cc-name" placeholder="${}" required="">
                                         <small class="text-muted">Full name as displayed on card</small>
                                         <div class="invalid-feedback"> Name on card is required </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="cc-number">Credit Card number</label>
-                                        <input type="text" class="form-control" name="cardNumber" id="cc-number" placeholder="*********" required="">
+                                        <input type="text" class="form-control" name="cardNumber" id="cc-number" placeholder="${}" required="">
                                         <div class="invalid-feedback"> Credit card number is required </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3 mb-3">
                                         <label for="cc-expiration">Expiration</label>
-                                        <input type="text" class="form-control" name="expiration" id="cc-expiration" placeholder="04/2026" required="">
+                                        <input type="text" class="form-control" name="expiration" id="cc-expiration" placeholder="${}" required="">
                                         <div class="invalid-feedback"> Expiration date required </div>
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="cc-cvv">CVV</label>
-                                        <input type="text" class="form-control" name="cvv" id="cc-cvv" placeholder="***" required="">
+                                        <input type="text" class="form-control" name="cvv" id="cc-cvv" placeholder="${}" required="">
                                         <div class="invalid-feedback"> Security code required </div>
                                     </div>
                                 </div>
