@@ -170,18 +170,14 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="address">Address</label>
-                                    <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" required="">
+                                    <label for="street">Street</label>
+                                    <input class="form-control" name="street" type="text" value="123 Main St">
                                     <div class="invalid-feedback"> Please enter your shipping address. </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 mb-3">
-                                        <label for="country">Country</label>
-                                        <select class="custom-select d-block w-100" name="country" id="country" required="">
-                                            <option value="">United States</option>
-                                            <option>Canada</option>
-                                        </select>
-                                        <div class="invalid-feedback"> Please select a valid country. </div>
+                                        <label for="city">City</label>
+                                         <input type="text" class="form-control" name="city" id="city" placeholder="Columbus">
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="state">State</label>
@@ -256,13 +252,13 @@
                                 <h4 class="mb-3">Payment</h4>
                                 <div class="d-block my-3">
                                     <div class="custom-control custom-radio">
-                                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-                                        <label class="custom-control-label" for="credit">Credit card</label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                                        <label class="custom-control-label" for="debit">Debit card</label>
-                                    </div>
+		                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" value="credit">
+		                                <label class="custom-control-label" for="credit">Credit card</label>
+		                            </div>
+		                            <div class="custom-control custom-radio">
+		                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" value="debit">
+		                                <label class="custom-control-label" for="debit">Debit card</label>
+		                            </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
@@ -272,8 +268,8 @@
                                         <div class="invalid-feedback"> Name on card is required </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="cc-number">Credit card number</label>
-                                        <input type="text" class="form-control" name="cc-number" id="cc-number" placeholder="*********" required="">
+                                        <label for="cc-number">Credit Card number</label>
+                                        <input type="text" class="form-control" name="cardNumber" id="cc-number" placeholder="*********" required="">
                                         <div class="invalid-feedback"> Credit card number is required </div>
                                     </div>
                                 </div>

@@ -209,7 +209,7 @@
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="zip">Zip</label>
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="" required="">
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="31909" required="">
 
                             </div>
                         </div>
@@ -228,7 +228,7 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Name on Card</label>
                                 <div class="col-lg-12">
-                                    <input class="form-control" name="nameOnCard" type="text" value="Jane Bishop">
+                                    <input class="form-control" name="nameOnCard" id="cc-name" type="text" value="Jane Bishop">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -240,13 +240,13 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Expiration</label>
                                 <div class="col-lg-12">
-                                    <input class="form-control" name="expiration" type="text" value="6/2025">
+                                    <input class="form-control" name="expiration" id="cc-expiration" type="text" value="6/2025">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">CVV</label>
                                 <div class="col-lg-12">
-                                    <input class="form-control" name="cvv" type="text" value="***">
+                                    <input class="form-control" name="cvv" id="cc-cvv" type="text" value="***">
                                 </div>
                             </div>
                             

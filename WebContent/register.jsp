@@ -230,13 +230,13 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="cc-name">Name on card</label>
-                                <input type="text" class="form-control" id="cc-name" name="fullname" placeholder="" >
+                                <input type="text" class="form-control" id="cc-name" name="nameOnCard" placeholder="" >
                                 <small class="text-muted">Full name as displayed on card</small>
 
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="cc-number">Credit card number</label>
-                                <input type="text" class="form-control" id="cc-number" name="cardNum" placeholder="" >
+                                <label for="cc-number">Credit Card Number</label>
+                                <input type="text" class="form-control" id="cc-number" name="cardNumber" placeholder="" >
 
                             </div>
                         </div>
