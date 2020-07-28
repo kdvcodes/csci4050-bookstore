@@ -85,7 +85,7 @@
 			            </div>
 			            
 			            <div class="form-group">
-			                <label class="col-lg-3 control-label">ISBN</label>
+			                <label class="col-lg-3 control-label">ISBN<span class="required">*</span></label>
 			                <div class="col-lg-12">
 			                    <input class="form-control" type="text" name="isbn">
 			                </div>
