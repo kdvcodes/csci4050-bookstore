@@ -158,7 +158,7 @@
                 <p>${addressExist}</p>
                 <p>${paymentExist}</p>
                             <h4 class="mb-3">Billing Address</h4>
-                            <form id="checkout" class="needs-validation" novalidate="" action="checkout" method="post">
+                            <form id="checkout" class="needs-validation" novalidate="" action="checkoutProcess" method="post">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="firstName">First name</label>
@@ -294,7 +294,7 @@
                                 </div>
                                 
                                 <hr class="mb-4">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit" form="checkout">Checkout</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit" form="checkout" name="checkoutButton" value="${totalOrder}">Checkout</button>
                             </form>
                         </div>
                     </div>

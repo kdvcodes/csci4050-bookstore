@@ -65,10 +65,12 @@ public class applyPromo extends HttpServlet {
 			} // while
 			
 			if(count == 0) {
+				System.out.println("count 0");
 				request.setAttribute("promoError", "Promo code does not exist!");
 				request.getRequestDispatcher("checkout.jsp?userId=" + userId + "&totalPrice=" + totalPrice + "&shipping=" + shipping + "&tax=" + tax + "&promotion=false").forward(request, response);
 				return;
 			} else {
+				System.out.println("count not 0");
 				String promoAmountQuery = "select promoDiscount from bookstore.promo where promoCode = " + promoCodeInput + ";";
 				PreparedStatement promoAmountStatement = con.prepareStatement(promoAmountQuery);
 				ResultSet promoAmountRS = promoAmountStatement.executeQuery();

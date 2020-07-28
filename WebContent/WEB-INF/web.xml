@@ -204,4 +204,14 @@
     <servlet-name>books</servlet-name>
     <url-pattern>/books</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>checkoutProcess</display-name>
+    <servlet-name>checkoutProcess</servlet-name>
+    <servlet-class>controller.checkoutProcess</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>checkoutProcess</servlet-name>
+    <url-pattern>/checkoutProcess</url-pattern>
+  </servlet-mapping>
 </web-app>
