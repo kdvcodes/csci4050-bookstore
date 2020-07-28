@@ -128,13 +128,13 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">First name</label>
                                 <div class="col-lg-12">
-                                    <input class="form-control" name="firstName" type="text" value="Jane">
+                                    <input class="form-control" name="firstName" type="text" placeholder="${ }">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Last name</label>
                                 <div class="col-lg-12">
-                                    <input class="form-control" name="lastName" type="text" value="Bishop">
+                                    <input class="form-control" name="lastName" type="text" placeholder="${ }">
                                 </div>
                             </div>
                             
@@ -142,13 +142,13 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Street</label>
                                 <div class="col-lg-12">
-                                    <input class="form-control" name="street" type="text" value="123 Main St">
+                                    <input class="form-control" name="street" type="text" placeholder="${ }">
                                 </div>
                             </div>
                             <div class="form-group row">
                             <div class="col-md-5 mb-3">
                                 <label for="city">City</label>
-                                <input type="text" class="form-control" name="city" id="city" placeholder="Columbus">
+                                <input type="text" class="form-control" name="city" id="city" placeholder="${ }">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="state">State</label>
@@ -210,7 +210,7 @@
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="zip">Zip</label>
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="31909" required="">
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="${ }" required="">
 
                             </div>
                         </div>
@@ -229,25 +229,25 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Name on Card</label>
                                 <div class="col-lg-12">
-                                    <input class="form-control" name="nameOnCard" id="cc-name" type="text" value="Jane Bishop">
+                                    <input class="form-control" name="nameOnCard" id="cc-name" type="text" placeholder="${ }"">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Credit Card Number</label>
                                 <div class="col-lg-12">
-                                    <input class="form-control" name="cardNumber" type="text" value="************">
+                                    <input class="form-control" name="cardNumber" type="text" placeholder="${ }">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Expiration</label>
                                 <div class="col-lg-12">
-                                    <input class="form-control" name="expiration" id="cc-expiration" type="text" value="6/2025">
+                                    <input class="form-control" name="expiration" id="cc-expiration" type="text" placeholder="${ }">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">CVV</label>
                                 <div class="col-lg-12">
-                                    <input class="form-control" name="cvv" id="cc-cvv" type="text" value="***">
+                                    <input class="form-control" name="cvv" id="cc-cvv" type="text" placeholder="${ }">
                                 </div>
                             </div>
                             
