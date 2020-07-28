@@ -46,15 +46,17 @@ To change this template use File | Settings | File Templates.
 				     <form class="form-inline" id="search" method="post" action="search">
 				        <div class="input-group" id="dropdown">
 				            
-				            <div class="btn-group">
-							    <button type="button" class="form-control btn btn-default dropdown-toggle filterToggle" data-toggle="dropdown">
+				             <div class="btn-group">
+							   <!--  <button type="button" class="form-control btn btn-default dropdown-toggle filterToggle" data-toggle="dropdown">
 							        Filter By <span class="caret"></span>
-							    </button>
-							    <div class="dropdown-menu" id="bookFilter" aria-labelledby="dropdownMenuButton">
-					                <a class="dropdown-item" href="#">Title</a>
-					                <a class="dropdown-item" href="#">Author</a>
-					                <a class="dropdown-item" href="#">ISBN</a>
-					            </div>
+							    </button> -->
+							    <!--  <div class="dropdown-menu" id="bookFilter" aria-labelledby="dropdownMenuButton">-->
+					                <select class="custom-select d-block w-100" id="searchCategory" name="searchCategory" >
+	                                    <option value="title">Title</option>
+										<option value="author">Author</option>
+										<option value="isbn">ISBN</option>
+									</select>
+					            <!--  </div>-->
 							</div>
 				        </div>
 				        <div class="input-group" id="search">
