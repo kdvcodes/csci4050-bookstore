@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.registrationConfirmation.SMTPAuthenticator;
+import model.DatabaseConnection;
 
 /**
  * Servlet implementation class checkoutProcess

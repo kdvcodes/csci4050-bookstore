@@ -1,9 +1,9 @@
-package controller;
+package model;
 
 import java.sql.*;
 
 public class DatabaseConnection {
-	protected static Connection initializeDatabase() throws SQLException, ClassNotFoundException {
+	public static Connection initializeDatabase() throws SQLException, ClassNotFoundException {
 		String dbDriver = "com.mysql.cj.jdbc.Driver";
 		String dbURL = "jdbc:mysql://localhost:3306/";
 		String dbName = "bookstore";

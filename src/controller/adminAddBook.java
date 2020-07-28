@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.DatabaseConnection;
+
 /**
  * Servlet implementation class adminAddBook
  */
@@ -80,6 +82,8 @@ public class adminAddBook extends HttpServlet {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+		request.getRequestDispatcher("adminHome.jsp").forward(request, response);
 	} // doPost
 
 }

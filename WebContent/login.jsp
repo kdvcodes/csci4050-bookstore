@@ -48,36 +48,35 @@
         </ul>
     </div>
     
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-            	<div class="container">
-				     <form class="form-inline" id="search" method="post" action="search">
-				        <div class="input-group" id="dropdown">
+<!--     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2"> -->
+<!--         <ul class="navbar-nav ml-auto"> -->
+<!--             <li class="nav-item"> -->
+<!--             	<div class="container"> -->
+<!-- 				     <form class="form-inline" id="search" method="post" action="search"> -->
+<!-- 				        <div class="input-group" id="dropdown"> -->
 				            
-				            <div class="btn-group">
-							   <!--  <button type="button" class="form-control btn btn-default dropdown-toggle filterToggle" data-toggle="dropdown">
-							        Filter By <span class="caret"></span>
-							    </button> -->
-							    <!--  <div class="dropdown-menu" id="bookFilter" aria-labelledby="dropdownMenuButton">-->
-					                <select class="custom-select d-block w-100" id="searchCategory" name="searchCategory" >
-	                                    <option value="title">Title</option>
-										<option value="author">Author</option>
-										<option value="isbn">ISBN</option>
-									</select>
-					            <!--  </div>-->
-							</div>
-							</div>
-				        </div>
-				        <div class="input-group" id="search">
-				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
-				            <div class="input-group-btn">
-				                <button class="btn btn-primary" type="submit" form="search">Search</button>
-				            </div>
-				        </div>
-				    </form>
-				</div>
-            </li>
+<!-- 				            <div class="btn-group"> -->
+<!-- 							    <button type="button" class="form-control btn btn-default dropdown-toggle filterToggle" data-toggle="dropdown">
+<!-- 							        Filter By <span class="caret"></span> -->
+<!-- 							    </button> -->
+<!-- 							     <div class="dropdown-menu" id="bookFilter" aria-labelledby="dropdownMenuButton"> -->
+<!-- 					                <select class="custom-select d-block w-100" id="searchCategory" name="searchCategory" > -->
+<!-- 	                                    <option value="title">Title</option> -->
+<!-- 										<option value="author">Author</option> -->
+<!-- 										<option value="isbn">ISBN</option> -->
+<!-- 									</select> -->
+<!-- 					             </div> -->
+<!-- 							</div> -->
+<!-- 							</div> -->
+<!-- 				        </div> -->
+<!-- 				        <div class="input-group" id="search"> -->
+<!-- 				            <input type = "text" class="form-control" placeholder="Search Books" name="Search"> -->
+<!-- 				            <div class="input-group-btn"> -->
+<!-- 				                <button class="btn btn-primary" type="submit" form="search">Search</button> -->
+<!-- 				            </div> -->
+<!-- 				        </div> -->
+<!-- 				    </form> -->
+<!-- 				</div> -->
             
             <li class="nav-item">
                 <div class="dropdown">

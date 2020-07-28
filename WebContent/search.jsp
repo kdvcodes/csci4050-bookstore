@@ -43,7 +43,7 @@ To change this template use File | Settings | File Templates.
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             	<div class="container">
-				     <form class="form-inline" id="search" method="post" action="search">
+				   <form class="form-inline" id="search" method="post" action="search">
 				        <div class="input-group" id="dropdown">
 				            
 				             <div class="btn-group">

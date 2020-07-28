@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.DatabaseConnection;
+
 
 //@WebServlet(name = "register", urlPatterns =("/register"))
 /**
@@ -59,8 +61,8 @@ public class register extends HttpServlet {
 		String state = request.getParameter("state");
 		String zip = request.getParameter("zip");
 		String paymentMethod = request.getParameter("paymentMethod");
-		String fullNameOnCard = request.getParameter("fullname");
-		String cardNum = request.getParameter("cardNum");
+		String fullNameOnCard = request.getParameter("nameOnCard");
+		String cardNum = request.getParameter("cardNumber");
 		String expiration = request.getParameter("expiration");
 		String cvv = request.getParameter("cvv");
 		String promotion = request.getParameter("promotion");
@@ -159,7 +161,7 @@ public class register extends HttpServlet {
 //				String paymentInfoQuery = "INSERT INTO `bookstore`.`payment` (`paymentId`, `paymentCardType`, `paymentCardOwnerName`, `paymentCardNum`, `paymentCardExpirationDate`, `paymentCardSecurityCode`, `paymentUserId`) "
 //						+ "VALUES ('" + paymentId + "', '" + paymentMethod + "', '" + fullNameOnCard + "', '" + cardNum + "', '" + expiration + "', '" + cvv + "', '" + userId + "');";
 				String paymentInfoQuery = "INSERT INTO `bookstore`.`payment` (`paymentId`, `paymentCardType`, `paymentCardOwnerName`, `paymentCardNum`, `paymentCardExpirationDate`, `paymentCardSecurityCode`, `paymentUserId`) "
-						+ "VALUES ('" + paymentId + "', '" + paymentMethod + "', '" + (fullNameOnCard.length() > 0? fullNameOnCard:"NULL") + "', '" + (cardNum.length() > 0? "aes_encrypt('" + cardNum + "', 'card')" : "NULL") + "', '" + (expiration.length() > 0? expiration : "NULL") + "', '" + (cvv.length() > 0? "aes_encrypt('" + cvv + "', 'card')" : "NULL") + "', '" + userId + "');";
+						+ "VALUES ('" + paymentId + "', '" + paymentMethod + "', '" + (fullNameOnCard.length() > 0? fullNameOnCard:"NULL") + "', " + (cardNum.length() > 0? "aes_encrypt('" + cardNum + "', 'card')" : "NULL") + ", '" + (expiration.length() > 0? expiration : "NULL") + "', " + (cvv.length() > 0? "aes_encrypt('" + cvv + "', 'card')" : "NULL") + ", '" + userId + "');";
 				PreparedStatement paymentInfoStatement = con.prepareStatement(paymentInfoQuery);
 				paymentInfoStatement.execute();
 				registerPayment = true;

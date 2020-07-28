@@ -43,10 +43,10 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             	<div class="container">
-				     <form class="form-inline" id="search" method="post" action="search">
+				   <form class="form-inline" id="search" method="post" action="search">
 				        <div class="input-group" id="dropdown">
 				            
-				            <div class="btn-group">
+				             <div class="btn-group">
 							   <!--  <button type="button" class="form-control btn btn-default dropdown-toggle filterToggle" data-toggle="dropdown">
 							        Filter By <span class="caret"></span>
 							    </button> -->
@@ -60,7 +60,7 @@
 							</div>
 				        </div>
 				        <div class="input-group" id="search">
-				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
+				            <input type = "text" class="form-control" placeholder="Search Books" name="searchPhrase">
 				            <div class="input-group-btn">
 				                <button class="btn btn-primary" type="submit" form="search">Search</button>
 				            </div>

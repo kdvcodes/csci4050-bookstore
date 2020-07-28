@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.registrationConfirmation.SMTPAuthenticator;
+import model.DatabaseConnection;
 
 import java.net.http.HttpRequest;
 import java.sql.Connection;
