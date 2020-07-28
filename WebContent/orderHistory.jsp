@@ -97,22 +97,22 @@
         <h1>Order History</h1>
         <p>View your order and reorder your books</p>
         <form class="form-inline">
-            <h5> <a href="product_single.jsp">ID 0021 : Harry Potter : </a></h5>
+            <h5> ID 0021 : Harry Potter : </h5>
             <button type="button" class="btn btn-info"> Reorder </button>
         </form>
 
         <form class="form-inline">
-            <h5> <a href="product_single.jsp">ID 0020 : Harry Potter : </a></h5>
+            <h5> ID 0020 : Harry Potter : </h5>
             <button type="button" class="btn btn-info"> Reorder </button>
         </form>
 
         <form class="form-inline">
-            <h5> <a href="product_single.jsp">ID 0019 : Harry Potter : </a></h5>
+            <h5> ID 0019 : Harry Potter : </h5>
             <button type="button" class="btn btn-info"> Reorder </button>
         </form>
 
         <form class="form-inline">
-            <h5> <a href="product_single.jsp">ID 0018 : Harry Potter : </a></h5>
+            <h5> ID 0018 : Harry Potter : </h5>
             <button type="button" class="btn btn-info"> Reorder </button>
         </form>
 
