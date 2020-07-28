@@ -45,7 +45,6 @@ public class register extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
-		System.out.println("Hello From Register Servlet!!");
 		
 		Random rng = new Random();
 		PrintWriter writer = response.getWriter();
@@ -74,7 +73,20 @@ public class register extends HttpServlet {
 		boolean registerPayment = false;
 		boolean registerIntoBD = false;
 		
-		System.out.println("promotion value: " + promotion);
+		if(firstName == null) firstName = "";
+		if(lastName == null) lastName = "";
+		if(email == null) email = "";
+		if(password == null) password = "";
+		if(confirm == null) confirm = "";
+		if(address == null) address = "";
+		if(city == null) city = "";
+		if(state == null) state = "";
+		if(zip == null) zip = "";
+		if(paymentMethod == null) paymentMethod = "";
+		if(fullNameOnCard == null) fullNameOnCard = "";
+		if(cardNum == null) cardNum = "";
+		if(expiration == null) expiration = "";
+		if(cvv == null) cvv = "";
 		
 		if(password.equals(confirm)) {
 			try {
@@ -125,7 +137,14 @@ public class register extends HttpServlet {
 				
 				String userInfoQuery = "INSERT INTO `bookstore`.`user`"
 						+ " (`userId`, `userFirstName`, `userLastName`, `userEmail`, `userPassword`, `userPromotion`, `userType`, `userAddressId`, `userPaymentId`, `userActivated`)"
-						+ " VALUES ('"+ userId +"', '" + (firstName.length() > 0? firstName : "NULL") + "', '" + (lastName.length() > 0? lastName : "NULL") + "', '" + (email.length() > 0? email : "NULL") + "', '" + (password.length() > 0? password : "NULL") + "', '" + (promotion.length() < 1? "0":"1") + "', '" + 0 + "', '" + addressId + "', '" + paymentId + "', '" + 0 + "');";
+						+ " VALUES ('"+ userId +"', '" 
+						+ (firstName.length() > 0? firstName : "NULL") 
+						+ "', '" + (lastName.length() > 0? lastName : "NULL") 
+						+ "', '" + (email.length() > 0? email : "NULL") + "', " 
+						+ (password.length() > 0? "aes_encrypt('" + password + "', 'password')" : "'NULL'") 
+						+ ", '" + (promotion == null? "0":"1") 
+						+ "', '" + 0 + "', '" + addressId 
+						+ "', '" + paymentId + "', '" + 0 + "');";
 				PreparedStatement userInfoStatement = con.prepareStatement(userInfoQuery);
 				userInfoStatement.execute();
 				registerUser = true;
@@ -137,9 +156,10 @@ public class register extends HttpServlet {
 				addressInfoStatement.execute();
 				registerAddress = true;
 				
-				String paymentInfoQuery = "INSERT INTO `bookstore`.`payment`"
-						+ " (`paymentId`, `paymentCardType`, `paymentCardOwnerName`, `paymentCardNum`, `paymentCardExpirationDate`, `paymentCardSecurityCode`, `paymentUserId`)"
-						+ " VALUES ('" + paymentId + "', '" + paymentMethod + "', '" + (fullNameOnCard.length() > 0? fullNameOnCard:"NULL") + "', '" + (cardNum.length() > 0? cardNum:"NULL") + "', '" + (expiration.length() > 0? expiration:"NULL") + "', '" + (cvv.length() > 0? cvv:"NULL") + "', '" + userId + "');";
+//				String paymentInfoQuery = "INSERT INTO `bookstore`.`payment` (`paymentId`, `paymentCardType`, `paymentCardOwnerName`, `paymentCardNum`, `paymentCardExpirationDate`, `paymentCardSecurityCode`, `paymentUserId`) "
+//						+ "VALUES ('" + paymentId + "', '" + paymentMethod + "', '" + fullNameOnCard + "', '" + cardNum + "', '" + expiration + "', '" + cvv + "', '" + userId + "');";
+				String paymentInfoQuery = "INSERT INTO `bookstore`.`payment` (`paymentId`, `paymentCardType`, `paymentCardOwnerName`, `paymentCardNum`, `paymentCardExpirationDate`, `paymentCardSecurityCode`, `paymentUserId`) "
+						+ "VALUES ('" + paymentId + "', '" + paymentMethod + "', '" + (fullNameOnCard.length() > 0? fullNameOnCard:"NULL") + "', '" + (cardNum.length() > 0? "aes_encrypt('" + cardNum + "', 'card')" : "NULL") + "', '" + (expiration.length() > 0? expiration : "NULL") + "', '" + (cvv.length() > 0? "aes_encrypt('" + cvv + "', 'card')" : "NULL") + "', '" + userId + "');";
 				PreparedStatement paymentInfoStatement = con.prepareStatement(paymentInfoQuery);
 				paymentInfoStatement.execute();
 				registerPayment = true;

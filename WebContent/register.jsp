@@ -106,6 +106,7 @@
                 	<div class="error-message">${doneRegistration}</div>
                 	<div class="error-message">${passwordError}</div>
 					<div class="error-message">${emailError}</div>
+					<div class="error-message">${registrationError}</div>
                     <form id="register" class="needs-validation" novalidate="" method="POST" action="register">
                     
                         <h3>Account Information</h3>
@@ -256,7 +257,7 @@
                        
                             
                        	<div>
-						  <input type="hidden" name="promotion" />
+<!-- 						  <input type="hidden" name="promotion" /> -->
 						  <input type="checkbox" name="promotion" value="1"/>
 						   Subscribe to receive promotional emails!
 						</div>

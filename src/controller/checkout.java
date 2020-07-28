@@ -193,7 +193,7 @@ public class checkout extends HttpServlet {
 			} // while
 			
 			// cardType
-			String cardTypeQuery = "select paymentCardType from bookstore.payment where paymentId = '" + userId + "';";
+			String cardTypeQuery = "select " + "paymentCardOwnerName as paymentCardType" + " from bookstore.payment where paymentId = '" + userId + "';";
 			PreparedStatement cardTypeStatement = con.prepareStatement(cardTypeQuery);
 			ResultSet cardTypeRS = cardTypeStatement.executeQuery();
 			
@@ -202,7 +202,7 @@ public class checkout extends HttpServlet {
 			} // while
 			
 			// cardName
-			String cardNameQuery = "select paymentCardOwnerName from bookstore.payment where paymentId = '" + userId + "';";
+			String cardNameQuery = "select " + "paymentCardOwnerName as paymentCardOwnerName" + " from bookstore.payment where paymentId = '" + userId + "';";
 			PreparedStatement cardNameStatement = con.prepareStatement(cardNameQuery);
 			ResultSet cardNameRS = cardNameStatement.executeQuery();
 			
@@ -211,7 +211,7 @@ public class checkout extends HttpServlet {
 			} // while
 			
 			// cardNumber
-			String cardNumberQuery = "select paymentCardNum from bookstore.payment where paymentId = '" + userId + "';";
+			String cardNumberQuery = "select " + "aes_decrypt(paymentCardNum, 'card') as paymentCardNum" + " from bookstore.payment where paymentId = '" + userId + "';";
 			PreparedStatement cardNumberStatement = con.prepareStatement(cardNumberQuery);
 			ResultSet cardNumberRS = cardNumberStatement.executeQuery();
 			
@@ -220,7 +220,7 @@ public class checkout extends HttpServlet {
 			} // while
 			
 			// cardExp
-			String cardExpQuery = "select paymentCardExpirationDate from bookstore.payment where paymentId = '" + userId + "';";
+			String cardExpQuery = "select " + "paymentCardExpirationDate as paymentCardExpirationDate" + " from bookstore.payment where paymentId = '" + userId + "';";
 			PreparedStatement cardExpStatement = con.prepareStatement(cardExpQuery);
 			ResultSet cardExpRS = cardExpStatement.executeQuery();
 			
@@ -229,7 +229,7 @@ public class checkout extends HttpServlet {
 			} // while
 			
 			// cardCVV
-			String cardCVVQuery = "select paymentCardSecurityCode from bookstore.payment where paymentId = '" + userId + "';";
+			String cardCVVQuery = "select " + "aes_decrypt(paymentCardSecurityCode, 'card') as paymentCardSecurityCode" + " from bookstore.payment where paymentId = '" + userId + "';";
 			PreparedStatement cardCVVStatement = con.prepareStatement(cardCVVQuery);
 			ResultSet cardCVVRS = cardCVVStatement.executeQuery();
 			

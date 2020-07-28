@@ -96,7 +96,7 @@
     <div class="px-4 px-lg-0">
         <!-- For demo purpose -->
         <div class="container text-black py-5 text-center">
-            <h1 class="display-4">Your Order is confirmed. Thank you for your purchase.</h1>
+            <h1 class="display-4">Your order is confirmed. Thank you for your purchase. Your order number is ${orderNumber}</h1>
             <p>Please check your email for order details.</p>
 
         </div>

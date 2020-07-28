@@ -397,7 +397,8 @@ public class checkoutProcess extends HttpServlet {
 		} // if
 		
 		System.out.println("Order " + orderNumber + " finished");
-		
+		request.setAttribute("orderNumber", orderNumber);
+		request.getRequestDispatcher("orderConfirmation.jsp").forward(request, response);
 		
 	} // doPost
 

@@ -75,7 +75,7 @@ public class setNewPassword extends HttpServlet {
 			
 			// activate user based on userId UPDATE `bookstore`.`user` SET `userActivated` = '1' WHERE (`userId` = '447');
 			try {
-				String setNewPasswordQuery = "UPDATE `bookstore`.`user` SET `userPassword` = '" + newPassword + "' WHERE (`userId` = '" + userId + "');";
+				String setNewPasswordQuery = "UPDATE `bookstore`.`user` SET `userPassword` = " + "aes_encrypt('" + newPassword + "', 'password')" + " WHERE (`userId` = '" + userId + "');";
 				PreparedStatement setNewPasswordStatement = con.prepareStatement(setNewPasswordQuery);
 				setNewPasswordStatement.execute();
 				

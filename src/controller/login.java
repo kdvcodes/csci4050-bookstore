@@ -65,7 +65,7 @@ public class login extends HttpServlet {
 				if(count == 1) {
 					emailMatch = true;
 					String realPassword = "";
-					String loginPasswordCheckQuery = "select userPassword from bookstore.user where userEmail = \"" + loginEmail + "\";";
+					String loginPasswordCheckQuery = "select " + "aes_decrypt(userPassword, 'password') as userPassword" + " from bookstore.user where userEmail = \"" + loginEmail + "\";";
 					PreparedStatement loginPasswordCheckStatement = con.prepareStatement(loginPasswordCheckQuery);
 					ResultSet passwordRS = loginPasswordCheckStatement.executeQuery();
 					
@@ -113,14 +113,30 @@ public class login extends HttpServlet {
 				Cookie loginCookie = new Cookie("user", loginEmail);
 				loginCookie.setMaxAge(60 * 60 * 24);
 				response.addCookie(loginCookie);
-				response.sendRedirect("message.jsp");
+//				response.sendRedirect("message.jsp");
 			} else {
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("login.jsp");
 				PrintWriter out= response.getWriter();
 				out.println("Error while creating your browsing session. Please try to log in again.");
 				rd.include(request, response);
+				return;
 			} // if else
 			
+			int userTypeInt = 0;
+			
+			String userTypeCheckQuery = "select userType from bookstore.user where userEmail = '" + loginEmail + "';";
+			PreparedStatement userTypeCheckStatement = con.prepareStatement(userTypeCheckQuery);
+			ResultSet userTypeCheckRS = userTypeCheckStatement.executeQuery();
+			
+			while(userTypeCheckRS.next()) {
+				userTypeInt += Integer.parseInt(userTypeCheckRS.getString("userType"));
+			} // while
+			
+			if(userTypeInt > 0) {
+				response.sendRedirect("adminHome.jsp");
+			} else {
+				response.sendRedirect("index.jsp");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -214,4 +214,24 @@
     <servlet-name>checkoutProcess</servlet-name>
     <url-pattern>/checkoutProcess</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>search</display-name>
+    <servlet-name>search</servlet-name>
+    <servlet-class>controller.search</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>search</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>displaySearch</display-name>
+    <servlet-name>displaySearch</servlet-name>
+    <servlet-class>controller.displaySearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>displaySearch</servlet-name>
+    <url-pattern>/displaySearch</url-pattern>
+  </servlet-mapping>
 </web-app>

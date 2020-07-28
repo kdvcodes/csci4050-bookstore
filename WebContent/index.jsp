@@ -53,7 +53,7 @@
 							</div>
 				        </div>
 				        <div class="input-group" id="search">
-				            <input type = "text" class="form-control" placeholder="Search Books" name="Search">
+				            <input type = "text" class="form-control" placeholder="Search Books" name="searchPhrase">
 				            <div class="input-group-btn">
 				                <button class="btn btn-primary" type="submit" form="search">Search</button>
 				            </div>

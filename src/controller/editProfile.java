@@ -42,9 +42,210 @@ public class editProfile extends HttpServlet {
 		System.out.println("Current user: " + userEmail);
 		
 		if(userEmail == null) {
-			request.getRequestDispatcher("message.jsp").forward(request, response);
+			request.getRequestDispatcher("login.jsp").forward(request, response);
 		} // if
-	}
+		
+		String currentFirstName = "";
+		String currentLastName = "";
+		String currentStreet = "";
+		String currentCity = "";
+		String currentState = "";
+		String currentZip = "";
+		String currentPaymentType = "";
+		String currentNameOnCard = "";
+		String currentCardNumber = "";
+		String currentExpiration = "";
+		String currentCvv = "";
+		String userId = "";
+		
+		try {
+			Connection con = DatabaseConnection.initializeDatabase();
+			
+			// GETTING INFORMATION
+			
+			// getting userId from db
+			try {
+				String userIdQuery = "select userId from bookstore.user where userEmail = '" + userEmail + "';";
+				PreparedStatement userIdStatement = con.prepareStatement(userIdQuery);
+				ResultSet rs = userIdStatement.executeQuery();
+				
+				while(rs.next()) {
+					userId += rs.getString("userId");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving userId from editProfile");
+				e.printStackTrace();
+			} // try catch
+			
+			// getting currentFirstName from db
+			try {
+				String currentFirstNameQuery = "select userFirstName from bookstore.user where userEmail = '" + userEmail + "';";
+				PreparedStatement currentFirstNameStatement = con.prepareStatement(currentFirstNameQuery);
+				ResultSet rs = currentFirstNameStatement.executeQuery();
+				
+				while(rs.next()) {
+					currentFirstName += rs.getString("userFirstName");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving currentFirstName from editProfile");
+				e.printStackTrace();
+			} // try catch
+			
+			// getting currentLastName from db
+			try {
+				String currentLastNameQuery = "select userLastName from bookstore.user where userEmail = '" + userEmail + "';";
+				PreparedStatement currentLastNameStatement = con.prepareStatement(currentLastNameQuery);
+				ResultSet rs = currentLastNameStatement.executeQuery();
+				
+				while(rs.next()) {
+					currentLastName += rs.getString("userLastName");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving currentLastName from editProfile");
+				e.printStackTrace();
+			} // try catch
+			
+			// getting currentStreet from db
+			try {
+				String currentStreetQuery = "select addressStreet from bookstore.address where addressId = '" + userId + "';";
+				PreparedStatement currentStreetStatement = con.prepareStatement(currentStreetQuery);
+				ResultSet rs = currentStreetStatement.executeQuery();
+				
+				while(rs.next()) {
+					currentStreet += rs.getString("addressStreet");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving currentStreet from editProfile");
+				e.printStackTrace();
+			} // try catch
+			
+			// getting city from db
+			try {
+				String currentCityQuery = "select addressCity from bookstore.address where addressId = '" + userId + "';";
+				PreparedStatement currentCityStatement = con.prepareStatement(currentCityQuery);
+				ResultSet rs = currentCityStatement.executeQuery();
+				
+				while(rs.next()) {
+					currentCity += rs.getString("addressCity");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving currentCity from editProfile");
+				e.printStackTrace();
+			} // try catch
+			
+			// getting state from db
+			try {
+				String currentStateQuery = "select addressState from bookstore.address where addressId = '" + userId + "';";
+				PreparedStatement currentStateStatement = con.prepareStatement(currentStateQuery);
+				ResultSet rs = currentStateStatement.executeQuery();
+				
+				while(rs.next()) {
+					currentState += rs.getString("addressState");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving currentState from editProfile");
+				e.printStackTrace();
+			} // try catch
+			
+			// getting zip from db
+			try {
+				String currentZipQuery = "select addressZipcode from bookstore.address where addressId = '" + userId + "';";
+				PreparedStatement currentZipStatement = con.prepareStatement(currentZipQuery);
+				ResultSet rs = currentZipStatement.executeQuery();
+				
+				while(rs.next()) {
+					currentZip += rs.getString("addressZipcode");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving currentZip from editProfile");
+				e.printStackTrace();
+			} // try catch
+			
+			// getting paymentCardType from db
+			try {
+				String paymentCardOwnerNameQuery = "select paymentCardOwnerName from bookstore.payment where paymentId = '" + userId + "';";
+				PreparedStatement paymentCardOwnerNameStatement = con.prepareStatement(paymentCardOwnerNameQuery);
+				ResultSet rs = paymentCardOwnerNameStatement.executeQuery();
+				
+				while(rs.next()) {
+					currentNameOnCard += rs.getString("paymentCardOwnerName");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving currentNameOnCard from editProfile");
+				e.printStackTrace();
+			} // try catch
+			
+			// getting paymentCardType from db
+			try {
+				String paymentCardNumberQuery = "select paymentCardNum from bookstore.payment where paymentId = '" + userId + "';";
+				PreparedStatement paymentCardNumberStatement = con.prepareStatement(paymentCardNumberQuery);
+				ResultSet rs = paymentCardNumberStatement.executeQuery();
+				
+				while(rs.next()) {
+					currentCardNumber += rs.getString("paymentCardNum");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving currentCardNumber from editProfile");
+				e.printStackTrace();
+			} // try catch
+			
+//			// getting paymentCardType from db
+//			try {
+//				String paymentCardNumberQuery = "select paymentCardNum from bookstore.payment where paymentId = '" + userId + "';";
+//				PreparedStatement paymentCardNumberStatement = con.prepareStatement(paymentCardNumberQuery);
+//				ResultSet rs = paymentCardNumberStatement.executeQuery();
+//				
+//				while(rs.next()) {
+//					currentCardNumber += rs.getString("paymentCardNum");
+//				} // while
+//			} catch(Exception e) {
+//				System.out.println("Errror retrieving currentCardNumber from editProfile");
+//				e.printStackTrace();
+//			} // try catch
+			
+			// getting paymentCardType from db
+			try {
+				String currentPaymentExpirationQuery = "select paymentCardExpirationDate from bookstore.payment where paymentId = '" + userId + "';";
+				PreparedStatement currentPaymentExpirationStatement = con.prepareStatement(currentPaymentExpirationQuery);
+				ResultSet rs = currentPaymentExpirationStatement.executeQuery();
+				
+				while(rs.next()) {
+					currentExpiration += rs.getString("paymentCardExpirationDate");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving currentExpiration from editProfile");
+				e.printStackTrace();
+			} // try catch
+			
+			// getting paymentCardType from db
+			try {
+				String currentCvvQuery = "select paymentCardSecurityCode from bookstore.payment where paymentId = '" + userId + "';";
+				PreparedStatement currentCvvStatement = con.prepareStatement(currentCvvQuery);
+				ResultSet rs = currentCvvStatement.executeQuery();
+				
+				while(rs.next()) {
+					currentCvv += rs.getString("paymentCardSecurityCode");
+				} // while
+			} catch(Exception e) {
+				System.out.println("Errror retrieving currentCvv from editProfile");
+				e.printStackTrace();
+			} // try catch
+		} catch(Exception e) {
+			e.printStackTrace();
+		} // try catch
+		
+		request.setAttribute("currentFirstName", currentFirstName);
+		request.setAttribute("currentLastName", currentLastName);
+		request.setAttribute("currentStreet", currentStreet);
+		request.setAttribute("currentCity", currentCity);
+		request.setAttribute("currentState", currentState);
+		request.setAttribute("currentZip", currentZip);
+		request.setAttribute("currentNameOnCard", currentNameOnCard);
+		request.setAttribute("currentCardNumber", currentCardNumber);
+		request.setAttribute("currentExpiration", currentExpiration);
+		request.setAttribute("currentCvv", currentCvv);
+		
+	} // doGet
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -79,7 +280,7 @@ public class editProfile extends HttpServlet {
 			// GETTING INFORMATION
 			// getting currentPassword from db
 			try {
-				String userPasswordQuery = "select userPassword from bookstore.user where userEmail = '" + userEmail + "';";
+				String userPasswordQuery = "select " + "aes_decrypt(userPassword, 'password') as userPassword" + " from bookstore.user where userEmail = '" + userEmail + "';";
 				PreparedStatement userPasswordStatement = con.prepareStatement(userPasswordQuery);
 				ResultSet rs = userPasswordStatement.executeQuery();
 				
@@ -90,12 +291,6 @@ public class editProfile extends HttpServlet {
 				System.out.println("Errror retrieving currentPassword from editProfile");
 				e.printStackTrace();
 			} // try catch
-			
-			if(!currentPasswordConfirm.equals(currentPassword)) {
-				request.setAttribute("passwordMismatchError", "Incorrect current password. Please try again.");
-				request.getRequestDispatcher("editProfile.jsp").forward(request, response);
-				return;
-			} // if
 			
 			// getting userId from db
 			try {
@@ -265,7 +460,6 @@ public class editProfile extends HttpServlet {
 				e.printStackTrace();
 			} // try catch
 			
-			
 			// PROCESSING INFORMATION
 			// process personal information
 			try {
@@ -291,7 +485,7 @@ public class editProfile extends HttpServlet {
 			
 			// process payment information
 			try {
-				String paymentInformationQuery = "UPDATE `bookstore`.`payment` SET `paymentCardType` = '" + (paymentType.length() > 0 && !paymentType.equals(currentPaymentType)? paymentType:currentPaymentType) + "', `paymentCardOwnerName` = '" + (nameOnCard.length() > 0 && !nameOnCard.equals(currentNameOnCard)? nameOnCard:currentNameOnCard) + "', `paymentCardNum` = '" + (cardNumber.length() > 0 && !cardNumber.equals(currentCardNumber)? cardNumber:currentCardNumber) + "', `paymentCardExpirationDate` = '" + (expiration.length() > 0 && !expiration.equals(currentExpiration)? expiration:currentExpiration) + "', `paymentCardSecurityCode` = '" + (cvv.length() > 0 && !cvv.equals(currentCvv)? cvv:currentCvv) + "' WHERE (`paymentId` = '" + userId + "');";
+				String paymentInformationQuery = "UPDATE `bookstore`.`payment` SET `paymentCardType` = '" + (paymentType.length() > 0 && !paymentType.equals(currentPaymentType)? paymentType:currentPaymentType) + "', `paymentCardOwnerName` = '" + (nameOnCard.length() > 0 && !nameOnCard.equals(currentNameOnCard)? nameOnCard:currentNameOnCard) + "', `paymentCardNum` = '" + (cardNumber.length() > 0 && !cardNumber.equals(currentCardNumber)? "aes_encrypt(" + cardNumber + ", 'card')":"aes_encrypt(" + currentCardNumber + ", 'card')") + "', `paymentCardExpirationDate` = '" + (expiration.length() > 0 && !expiration.equals(currentExpiration)? expiration:currentExpiration) + "', `paymentCardSecurityCode` = '" + (cvv.length() > 0 && !cvv.equals(currentCvv)? "aes_encrypt(" + cvv + ", 'card')":"aes_encrypt(" + currentCvv + ", 'card')") + "' WHERE (`paymentId` = '" + userId + "');";
 				PreparedStatement paymentInformationStatement = con.prepareStatement(paymentInformationQuery);
 				paymentInformationStatement.execute();
 				paymentInformationUpdate = true;
@@ -299,6 +493,26 @@ public class editProfile extends HttpServlet {
 				System.out.println("Error processing payment information from editProfile");
 				e.printStackTrace();
 			} // try catch
+			
+			// process password change
+			if(newPassword == null) newPassword = "";
+			if(newPasswordConfirm == null) newPasswordConfirm = "";
+			
+			if(newPassword.length()>0 && newPasswordConfirm.equals(newPassword)) {
+				if(!currentPasswordConfirm.equals(currentPassword)) {
+					request.setAttribute("passwordMismatchError", "Incorrect current password. Please try again.");
+					request.getRequestDispatcher("editProfile.jsp").forward(request, response);
+					return;
+				} // if
+				
+				try {
+					String passwordUpdateQuery = "UPDATE `bookstore`.`user` SET `userPassword` = " + "aes_encrypt('" + newPassword + "', 'password')" + " WHERE (`userId` = '" + userId + "');";
+					PreparedStatement passwordUpdateStatement = con.prepareStatement(passwordUpdateQuery);
+					passwordUpdateStatement.execute();
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+			} // if
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Error initialize DB connection from editProfile");
