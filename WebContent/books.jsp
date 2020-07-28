@@ -77,6 +77,7 @@ To change this template use File | Settings | File Templates.
 			        <a class="dropdown-item" href="register.jsp">Register</a>
 			        <a class="dropdown-item" href="message.jsp">Message</a>
 			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
+			        <a class="dropdown-item" href="orderHistory.jsp">Orders</a>
 			        <a class="dropdown-item" href="logout">Log Out</a>
 			      </div>
 			    </div>
