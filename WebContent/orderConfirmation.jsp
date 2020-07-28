@@ -76,6 +76,7 @@
 			        <a class="dropdown-item" href="register.jsp">Register</a>
 			        <a class="dropdown-item" href="message.jsp">Message</a>
 			        <a class="dropdown-item" href="editProfile.jsp">Edit Profile</a>
+			        <a class="dropdown-item" href="orderHistory.jsp">Orders</a>
 			        <a class="dropdown-item" href="logout">Log Out</a>
 			      </div>
 			    </div>
@@ -94,9 +95,9 @@
 <section class="static about-sec">
     <div class="px-4 px-lg-0">
         <!-- For demo purpose -->
-        <div class="container text-white py-5 text-center">
-            <h1 class="display-4">Thank you for your Order. Your Order is confirmed.</h1>
-            <p>Your order is expected to arrive by Friday</p>
+        <div class="container text-black py-5 text-center">
+            <h1 class="display-4">Your Order is confirmed. Thank you for your purchase.</h1>
+            <p>Please check your email for order details.</p>
 
         </div>
     </div>
