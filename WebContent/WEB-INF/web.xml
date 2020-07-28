@@ -194,4 +194,14 @@
     <servlet-name>applyPromo</servlet-name>
     <url-pattern>/applyPromo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>books</display-name>
+    <servlet-name>books</servlet-name>
+    <servlet-class>controller.books</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>books</servlet-name>
+    <url-pattern>/books</url-pattern>
+  </servlet-mapping>
 </web-app>

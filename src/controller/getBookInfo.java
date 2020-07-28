@@ -42,6 +42,7 @@ public class getBookInfo extends HttpServlet {
 		String bookSource = "images/books/";
 		String bookCover = "";
 		
+		System.out.println("Hello");
 		try {
 			Connection con = DatabaseConnection.initializeDatabase();
 			
