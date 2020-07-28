@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -269,7 +270,41 @@ public class checkout extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		String userEmail = "";
+		String userId = "";
+		Cookie[] cookies = request.getCookies();
+		if(cookies !=null){
+			for(Cookie cookie : cookies){
+				if(cookie.getName().equals("user")) userEmail = cookie.getValue();
+			} // for
+		} // if
+		System.out.println("checkout::doPost:userEmail: " + userEmail);
+		
+		if(userEmail.equals("")) {
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		} // if
+		 
+		// verify userId
+		try {
+			Connection con = DatabaseConnection.initializeDatabase();
+			
+			String userIdQuery = "select userId from bookstore.user where userEmail = " + userEmail + ";";
+			PreparedStatement userIdStatement = con.prepareStatement(userIdQuery);
+			ResultSet userIdRS = userIdStatement.executeQuery();
+			
+			while(userIdRS.next()) {
+				userId += userIdRS.getString("userId");
+			} // while
+			
+			con.close();
+			userIdStatement.close();
+			userIdRS.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} // try catch
+		
+		String newAddressCheck = request.getParameter("newAddress");
+		String newPaymentCheck = request.getParameter("newPayment");
+	} // doPost
 
 }

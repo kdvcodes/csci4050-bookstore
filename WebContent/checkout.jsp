@@ -182,7 +182,7 @@
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="state">State</label>
-                                        <select class="custom-select d-block w-100" name="state"id="state" required="">
+                                        <select class="custom-select d-block w-100" name="state" id="state" required="">
                                             <option value="">Choose...</option>
 									<option value="AL">Alabama</option>
 									<option value="AK">Alaska</option>
@@ -246,7 +246,7 @@
                                 </div>
 <!--                                 <hr class="mb-4"> -->
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="same-address" id="same-address" ${addressExistCheck}>
+                                    <input type="checkbox" class="custom-control-input" name="newAddress" id="same-address" ${addressExistCheck} value="newAddr">
                                     <label class="custom-control-label" for="same-address">Use saved address for shipping and billing</label>
                                 </div>
                                 <hr class="mb-4">
@@ -288,7 +288,7 @@
                                 </div>
                                 
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="same-payment" id="same-payment" ${paymentExistCheck}>
+                                    <input type="checkbox" class="custom-control-input" name="newPayment" id="same-payment" ${paymentExistCheck} value="newPmt">
                                     <label class="custom-control-label" for="same-payment">Use saved payment method</label>
                                 </div>
                                 

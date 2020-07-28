@@ -82,18 +82,6 @@ public class books extends HttpServlet {
 		} // try catch
 		
 		if(books.size() > 0) {
-//			String book = "";
-//			for(int i = 0; i < names.size(); i++) {
-//				book += "      <div class=\"col-lg-3 col-md-6\">\n" + 
-//						"        <div class=\"item\">\n" + 
-//						"          <jsp:include page=\"/getBookInfo\" flush=\"true\">\n" + 
-//						"          	<jsp:param name=\"bookISBN\" value=\"" + books.get(i) + "\" />\n" + 
-//						"          </jsp:include>\n" + 
-//						"        </div>\n" + 
-//						"      </div>";
-//				
-//			} // for
-//			request.setAttribute("bookList", book);
 			for(int i = 0; i < names.size(); i++) {
 				writer.println("<div class=\"col-lg-3 col-md-6\">");
 				writer.println("<div class=\"item\">");
@@ -104,73 +92,9 @@ public class books extends HttpServlet {
 				writer.println("<h6><span class=\"price\">$" + prices.get(i) + "</span></h6>");
 				writer.println("</div>");
 				writer.println("</div>");
-			}
+			} // for
 		} // if
 	} // doGet
-    
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		// ?bookISBN=439708184
-//		PrintWriter writer = response.getWriter();
-////		String queryString = request.getQueryString();
-////		System.out.println("Query String: " + queryString);
-////		String bookISBN = queryString.split("=")[1];
-//		String bookISBN = request.getParameter("bookISBN");
-//		System.out.println("bookISBN: " + bookISBN);
-//		String bookName = "";
-//		String bookPrice = "";
-//		String bookSource = "images/books/";
-//		String bookCover = "";
-//		
-//		System.out.println("Hello");
-//		try {
-//			Connection con = DatabaseConnection.initializeDatabase();
-//			
-//			String bookNameQuery = "select bookName from bookstore.book where bookISBN='" + bookISBN + "';";
-//			String bookPriceQuery = "select bookPrice from bookstore.book where bookISBN='" + bookISBN + "';";
-//			String bookCoverQuery = "select bookCoverImg from bookstore.book where bookISBN ='" + bookISBN + "';";
-//			PreparedStatement bookNameStatement = con.prepareStatement(bookNameQuery);
-//			ResultSet bookNameRS = bookNameStatement.executeQuery();
-//			
-//			while(bookNameRS.next()) {
-//				bookName += bookNameRS.getString("bookName");
-//			} // while
-//			
-//			PreparedStatement bookPriceStatement = con.prepareStatement(bookPriceQuery);
-//			ResultSet bookPriceRS = bookPriceStatement.executeQuery();
-//			
-//			while(bookPriceRS.next()) {
-//				bookPrice += bookPriceRS.getString("bookPrice");
-//			} // while
-//			
-//			PreparedStatement bookCoverStatement = con.prepareStatement(bookCoverQuery);
-//			ResultSet bookCoverRS = bookCoverStatement.executeQuery();
-//			
-//			while(bookCoverRS.next()) {
-//				bookCover += bookCoverRS.getString("bookCoverImg");
-//			} // while
-//			
-//			con.close();
-//			bookNameStatement.close();
-//			bookNameRS.close();
-//			bookPriceStatement.close();
-//			bookPriceRS.close();
-//			bookCoverStatement.close();
-//			bookCoverRS.close();
-//			
-//			writer.println("<div class=\"col-lg-3 col-md-6\">");
-//			writer.println("<div class=\"item\">");
-//			writer.println("<a href=/csci4050-bookstore/product_single.jsp?bookISBN=" + bookISBN + ">");
-//			writer.println("<img src='" + bookSource + bookCover + "' alt=\"img\" width=\"200\" height=\"300\">");
-//			writer.println("</a>");
-//			writer.println("<h4>" + bookName + "</h4>");
-//			writer.println("<h6><span class=\"price\">$" + bookPrice + "</span></h6>");
-//			writer.println("</div>");
-//			writer.println("</div>");
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	} // doGet
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
