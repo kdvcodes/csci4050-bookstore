@@ -1,0 +1,1 @@
+the following database is made by MySQL and should be imported into a schema named "bookstore"
