@@ -29,7 +29,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="jdk" jdkName="AdoptOpenJDK 11 [11.0.7]" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="default-java" jdkType="JavaSDK" />
     <orderEntry type="library" name="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v6.0" level="application" />
     <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.web.container" level="application" />
     <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.module.container" level="application" />
@@ -51,5 +51,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="javax.activation-1.2.0" level="project" />
+    <orderEntry type="library" name="javax.mail" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.20" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
   </component>
 </module>
